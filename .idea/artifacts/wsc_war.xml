@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="wsc:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="wsc-001.war">
+      <element id="artifact" artifact-name="wsc:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -4,7 +4,7 @@
  * @author dodortus (codejs.co.kr / dodortus@gmail.com)
  *
  */
-$(function() {
+(function() {
   if (typeof webkitSpeechRecognition != 'function') {
     alert('크롬에서만 동작 합니다.');
     return false;

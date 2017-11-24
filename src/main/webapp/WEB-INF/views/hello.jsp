@@ -3,8 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <link href="main.css" rel="stylesheet" type="text/css" />
-    <script src="main.js"></script>
+    <link href="/resources/css/main.css" rel="stylesheet" type="text/css" />
+    <script src="/resources/js/main.js"></script>
     <title></title>
 </head>
 <body>
