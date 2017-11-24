@@ -4,7 +4,7 @@
  * @author dodortus (codejs.co.kr / dodortus@gmail.com)
  *
  */
-(function() {
+function start() {
   if (typeof webkitSpeechRecognition != 'function') {
     alert('크롬에서만 동작 합니다.');
     return false;
@@ -14,10 +14,10 @@
   var isRecognizing = false;
   var ignoreOnend = false;
   var finalTranscript = '';
- 	var audio = document.getElementById('audio');
+  var audio = document.getElementById('audio');
   var $btnMic = $('#btn-mic');
- 	var $result = $('#result');
- 	var $iconMusic = $('#icon-music');
+  var $result = $('#result');
+  var $iconMusic = $('#icon-music');
   recognition.continuous = true;
   recognition.interimResults = true;
 
@@ -185,4 +185,4 @@
   $('#btn-tts').click(function() {
     textToSpeech($('#final_span').text() || '전 음성 인식된 글자를 읽습니다.');
   });
-});
+};
