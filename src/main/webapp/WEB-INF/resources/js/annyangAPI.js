@@ -19,12 +19,8 @@ function start2() {
     var $iconMusic = $('#icon-music');
 
     annyang.start();
-    annyang.abort();
+    annyang.pause();
     var recognition2 = annyang.getSpeechRecognizer();
-    recognition2.autoRestart = false;
-    recognition2.interimResults = true;
-    recognition2.continuous = true;
-    recognition2.abort();
     //var recognition2 = annyang.getSpeechRecognizer();
     var finalTranscript2 = '';
 
@@ -121,11 +117,12 @@ function start2() {
     // 버튼이 눌렸을 때 번역 시작 함수수
     function start(event) {
         if (isRecognizing) {
-            recognition2.abort();
+            recognition2.pause();
             return;
         }
 
-        recognition2.start();
+        recognition2.start({autoRestart: false, continuous: true});
+        recognition2.interimResults = true;
         ignoreOnend = false;
 
         finalTranscript2 = '';
@@ -134,30 +131,4 @@ function start2() {
 
     }
 
-    /**
-     * textToSpeech
-     * 지원: 크롬, 사파리, 오페라, 엣지
-     */
-    function textToSpeech(text) {
-        console.log('textToSpeech', arguments);
-
-        /*
-        var u = new SpeechSynthesisUtterance();
-        u.text = 'Hello world';
-        u.lang = 'en-US';
-        u.rate = 1.2;
-        u.onend = function(event) {
-          log('Finished in ' + event.elapsedTime + ' seconds.');
-        };
-        speechSynthesis.speak(u);
-        */
-
-        // simple version
-        speechSynthesis.speak(new SpeechSynthesisUtterance(text));
-    }
-
-    $btnMic.click(start);
-    $('#btn-tts').click(function() {
-        textToSpeech($('#final_span').text() || '전 음성 인식된 글자를 읽습니다.');
-    });
 };

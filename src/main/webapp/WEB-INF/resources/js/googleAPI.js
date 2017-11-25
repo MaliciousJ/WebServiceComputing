@@ -14,11 +14,8 @@ function start() {
     var isRecognizing = false;
     var ignoreOnend = false;
     var finalTranscript = '';
-    var audio = document.getElementById('audio');
 
-    var $btnMic = $('#btn-mic');
     var $result = $('#result');
-    var $iconMusic = $('#icon-music');
     recognition.continuous = true;
     recognition.interimResults = true;
 
@@ -53,7 +50,7 @@ function start() {
       if (window.getSelection) {
           window.getSelection().removeAllRanges();
           var range = document.createRange();
-          range.selectNode(document.getElementById('final-span'));
+          range.selectNode(document.getElementById('final_span'));
           window.getSelection().addRange(range);
       }
   };
@@ -157,28 +154,6 @@ function start() {
     interim_span.innerHTML = '';
   }
 
-  /**
-   * textToSpeech
-   * 지원: 크롬, 사파리, 오페라, 엣지
-   */
-    function textToSpeech(text) {
-        console.log('textToSpeech', arguments);
-
-    /*
-    var u = new SpeechSynthesisUtterance();
-    u.text = 'Hello world';
-    u.lang = 'en-US';
-    u.rate = 1.2;
-    u.onend = function(event) {
-      log('Finished in ' + event.elapsedTime + ' seconds.');
-    };
-    speechSynthesis.speak(u);
-    */
-
-    // simple version
-        speechSynthesis.speak(new SpeechSynthesisUtterance(text));
-    }
-
     function requestServer() {
         $.ajax({
         method: 'post',
@@ -190,8 +165,4 @@ function start() {
         });
     }
 
-    $btnMic.click(start);
-    $('#btn-tts').click(function() {
-        textToSpeech($('#final_span').text() || '전 음성 인식된 글자를 읽습니다.');
-    });
 };
