@@ -14,10 +14,8 @@ function start() {
     var isRecognizing = false;
     var ignoreOnend = false;
     var finalTranscript = '';
-    var audio = document.getElementById('audio');
     var $btnMic = $('#btn-mic');
     var $result = $('#result');
-    var $iconMusic = $('#icon-music');
     recognition.continuous = true;
     recognition.interimResults = true;
 
