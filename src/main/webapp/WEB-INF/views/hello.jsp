@@ -43,10 +43,12 @@
             <span class="final" id="final_span"></span>
             <span class="interim" id="interim_span"></span>
         </div>
-        <button id="btn-mic" class="off" onclick="start()">마이크 <span></span></button>
 
+        <div class="fixed-action-btn" style="bottom: 25px; right: 170px;">
+            <a id="btn-mic" class="btn-floating btn-large waves-effect waves-light red" onclick="start();"><i class="material-icons">mic</i></a>
+        </div>
         <div class="fixed-action-btn" style="bottom: 35px; right: 170px;">
-            <a class="btn-floating btn-large waves-effect waves-light red" onclick='initMemo()'><i class="material-icons">mic</i></a>
+            <a id="btn-mic2" class="btn-floating btn-large waves-effect waves-light red" onclick="save_data(document.getElementById('interim_span').innerHTML); Materialize.toast('SUBMIT', 1000);"><i class="material-icons">stop</i></a>
         </div>
         <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <button class="btn waves-effect waves-center" type="submit" name="action"
@@ -161,9 +163,9 @@
         initMemo();
     }
 
-    function save_data(){
+    function save_data( txt ){
         var memoRef = database.ref('memos/'+ userInfo.uid );
-        var txt = $(".textarea").val();
+        //var txt = $(".textarea").val();
         if(txt == ''){
             return;
         }
@@ -190,7 +192,7 @@
 
     $(function(){
         $(".textarea").blur(function(){
-            save_data();
+            save_data( $(".textarea").val() );
         });
     });
 
@@ -200,10 +202,8 @@
      * @author dodortus (codejs.co.kr / dodortus@gmail.com)
      *
      */
-    function start() {
         if (typeof webkitSpeechRecognition != 'function') {
             alert('크롬에서만 동작 합니다.');
-            return false;
         }
 
         var recognition = new webkitSpeechRecognition();
@@ -219,7 +219,7 @@
             console.log('onstart', arguments);
             isRecognizing = true;
 
-            $btnMic.attr('class', 'on');
+            //$btnMic.attr('class', 'on');
         };
 
         recognition.onend = function() {
@@ -230,12 +230,14 @@
                 return false;
             }
 
+
             // DO end process
+            /*
             $btnMic.attr('class', 'off');
             if (!finalTranscript) {
                 console.log('empty finalTranscript');
                 return false;
-            }
+            }*/
 
             if (window.getSelection) {
                 window.getSelection().removeAllRanges();
@@ -302,7 +304,7 @@
                 ignoreOnend = true;
             }
 
-            $btnMic.attr('class', 'off');
+            //$btnMic.attr('class', 'off');
         };
 
         var two_line = /\n\n/g;
@@ -324,6 +326,10 @@
                 recognition.stop();
                 return;
             }
+            /*
+            if(final_span.innerHTML != '') {
+                save_data(document.getElementById('final').innerHTML);
+            }*/
             //recognition.lang = 'en-US';
             recognition.lang = 'ko-KR';
             recognition.start();
@@ -342,25 +348,10 @@
         function textToSpeech(text) {
             console.log('textToSpeech', arguments);
 
-            /*
-            var u = new SpeechSynthesisUtterance();
-            u.text = 'Hello world';
-            u.lang = 'en-US';
-            u.rate = 1.2;
-            u.onend = function(event) {
-              log('Finished in ' + event.elapsedTime + ' seconds.');
-            };
-            speechSynthesis.speak(u);
-            */
-
             // simple version
             speechSynthesis.speak(new SpeechSynthesisUtterance(text));
         }
 
-        /**
-         * requestServer
-         * key - AIzaSyDiMqfg8frtoZflA_2LPqfGdpjmgTMgWhg
-         */
         function requestServer() {
             $.ajax({
                 method: 'post',
@@ -380,7 +371,6 @@
         $('#btn-tts').click(function() {
             textToSpeech($('#final_span').text() || '전 음성 인식된 글자를 읽습니다.');
         });
-    };
 
 </script>
 
