@@ -5,6 +5,8 @@ public class Searchable {
     private String name;
     private String email;
     private String orderParam;
+    private String author;
+    private String title;
 
     public String getName() {
         return name;
@@ -28,5 +30,21 @@ public class Searchable {
 
     public void setOrderParam(String orderParam) {
         this.orderParam = orderParam;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

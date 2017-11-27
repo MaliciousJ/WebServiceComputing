@@ -11,6 +11,11 @@
         <sec:logout logout-url="/user/signout" logout-success-url="/user/signin" />
         <sec:intercept-url pattern="/user/onlyUserByXml" access="hasRole('ROLE_USER')" />
         <sec:intercept-url pattern="/user/onlyAdminByXml" access="hasRole('ROLE_ADMIN')" />
+        <sec:intercept-url pattern="/book/register" access="hasRole('ROLE_USER')" />
+        <!--
+        과제 작성 당시 문제가 됐던 부분. 이 부분을 제거하자 과제에서 요구한 기능 자체는 완전히 구현되었음.
+        <sec:intercept-url pattern="/book/delete" access="hasRole('ROLE_ADMIN')" />
+        -->
         <sec:intercept-url pattern="/**" access="permitAll" />
     </sec:http>
 
