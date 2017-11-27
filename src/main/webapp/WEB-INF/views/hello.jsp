@@ -48,7 +48,10 @@
             <a id="btn-mic" class="btn-floating btn-large waves-effect waves-light red" onclick="start();"><i class="material-icons">mic</i></a>
         </div>
         <div class="fixed-action-btn" style="bottom: 35px; right: 170px;">
-            <a id="btn-mic2" class="btn-floating btn-large waves-effect waves-light red" onclick="save_data(document.getElementById('interim_span').innerHTML); Materialize.toast('SUBMIT', 1000);"><i class="material-icons">stop</i></a>
+            // 여기서 document.getElementById('interim_span').innerHTML로 내용 가져오시면 됩니다.
+            <a id="btn-mic2" class="btn-floating btn-large waves-effect waves-light red" onclick="save_data(document.getElementById('interim_span').innerHTML);
+                                                                                                            Materialize.toast('SUBMIT', 1000);
+                                                                                                            "><i class="material-icons">stop</i></a>
         </div>
         <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <button class="btn waves-effect waves-center" type="submit" name="action"
@@ -371,6 +374,10 @@
         $('#btn-tts').click(function() {
             textToSpeech($('#final_span').text() || '전 음성 인식된 글자를 읽습니다.');
         });
+
+        function removeScript( id ) {
+            id = ''
+        }
 
 </script>
 
