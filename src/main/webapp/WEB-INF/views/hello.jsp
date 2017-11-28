@@ -43,12 +43,11 @@
             <span class="final" id="final_span"></span>
             <span class="interim" id="interim_span"></span>
         </div>
-
-        <div class="fixed-action-btn" style="bottom: 25px; right: 170px;">
-            <a id="btn-mic" class="btn-floating btn-large waves-effect waves-light red" onclick="start();"><i class="material-icons">mic</i></a>
+        <div class="fixed-action-btn" style="bottom: 35px; right: 230px;">
+            <a id="test" class="btn-floating btn-large waves-effect waves-light red" onclick="start();"><i class="material-icons">mic</i></a>
         </div>
+
         <div class="fixed-action-btn" style="bottom: 35px; right: 170px;">
-            // 여기서 document.getElementById('interim_span').innerHTML로 내용 가져오시면 됩니다.
             <a id="btn-mic2" class="btn-floating btn-large waves-effect waves-light red" onclick="save_data(document.getElementById('interim_span').innerHTML);
                                                                                                             Materialize.toast('SUBMIT', 1000);
                                                                                                             "><i class="material-icons">stop</i></a>
