@@ -43,6 +43,7 @@
             <span class="final" id="final_span"></span>
             <span class="interim" id="interim_span"></span>
         </div>
+
         <div class="fixed-action-btn" style="bottom: 35px; right: 230px;">
             <a id="test" class="btn-floating btn-large waves-effect waves-light red" onclick="start();"><i class="material-icons">mic</i></a>
         </div>
