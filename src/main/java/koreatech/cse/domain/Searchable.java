@@ -7,7 +7,8 @@ public class Searchable {
     private String orderParam;
     private String author;
     private String title;
-    private String language;
+    private String source;
+    private String target;
     private boolean favorite;
 
     public String getName() {
@@ -50,19 +51,27 @@ public class Searchable {
         this.title = title;
     }
 
-    public String getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
     public void setFavorite(boolean favorite) {
         this.favorite = favorite;
     }
 
     public boolean isFavorite() {
         return favorite;
+    }
+
+    public String getTarget() {
+        return target;
+    }
+
+    public void setTarget(String target) {
+        this.target = target;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
     }
 }

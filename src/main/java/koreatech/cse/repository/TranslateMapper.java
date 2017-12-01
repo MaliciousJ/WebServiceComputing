@@ -11,18 +11,27 @@ import java.util.List;
 
 @Repository
 public interface TranslateMapper {
-    @Insert("INSERT INTO TRANSLATE (LANGUAGE, ORIGINAL, TRANSLATED, USERID, FAVORITE, DATE) VALUES (#{language}, #{original}, #{translated}, #{userid}, #{favorite}, #{date})")
+    @Insert("INSERT INTO TRANSLATE (SOURCE, TARGET, ORIGINAL, TRANSLATED, USERID, FAVORITE, DATE) VALUES (#{source}, #{original}, #{translated}, #{userid}, #{favorite}, #{date})")
     @SelectKey(statement = "SELECT LAST_INSERT_ID()", keyProperty = "id", before = false, resultType = int.class)
     void insert(Translate translate);
 
-    @Update("UPDATE TRANSLATE SET LANGUAGE = #{language}, ORIGINAL = #{original}, TRANSLATED = #{translated}, USERID = #{userid}, FAVORITE = #{favorite} WHERE ID = #{id}")
+    @Update("UPDATE TRANSLATE SET SOURCE = #{source}, ORIGINAL = #{original}, TRANSLATED = #{translated}, USERID = #{userid}, FAVORITE = #{favorite} WHERE ID = #{id}")
     void update(Translate translate);
 
     @Select("SELECT * FROM TRANSLATE WHERE ID = #{id}")
     Translate findOne(@Param("id") int id);
 
-    @Select("SELECT * FROM TRANSLATE WHERE USERID = #{userid}")
-    Translate findByTitle(@Param("title") String Title);
+    @Select("SELECT * FROM TRANSLATE WHERE SOURCE = #{source}")
+    Translate findBySource(@Param("source") String source);
+
+    @Select("SELECT * FROM TRANSLATE WHERE TARGET = #{target}")
+    Translate findByTarget(@Param("target") String target);
+
+    @Select("SELECT * FROM TRANSLATE WHERE SOURCE = #{source} AND TARGET = #{target}")
+    Translate findByLanguage(@Param("source") String target, @Param("source") String source);
+
+    @Select("SELECT * FROM TRANSLATE WHERE FAVORITE = #{favorite}")
+    Translate findByFavorite(@Param("favorite") String favorite);
 
     @Delete("DELETE FROM TRANSLATE WHERE ID = #{id}")
     void delete(@Param("id") int id);
@@ -33,8 +42,9 @@ public interface TranslateMapper {
     //@formatter off
     @Select("<script>"
             + "SELECT * FROM TRANSLATE"
-            + "<if test='language != null'> WHERE LANGUAGE = #{language}</if>"
-            + "<if test='language != null and favorite != null'> OR FAVORITE = #{favorite}</if>"
+            + "<if test='source != null'> WHERE SOURCE = #{source}</if>"
+            + "<if test='source != null and target != null'> OR TARGET = #{target}</if>"
+            + "<if test='source != null and target != null and favorite != null'> OR FAVORITE = #{favorite}"
             + "<if test='orderParam != null'>ORDER BY ${orderParam} DESC</if>"
             + "</script>")
     //@formatter on

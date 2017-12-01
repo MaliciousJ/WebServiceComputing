@@ -42,9 +42,10 @@ public class TranslateController {
         return "redirect:/translate/list";
     }
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String list(Model model, @RequestParam(required=false) String language, @RequestParam(required=false) boolean favorite, @RequestParam(required=false) String order) {
+    public String list(Model model, @RequestParam(required=false) String source, @RequestParam(required=false) String target, @RequestParam(required=false) boolean favorite, @RequestParam(required=false) String order) {
         Searchable searchable = new Searchable();
-        searchable.setLanguage(language);
+        searchable.setSource(source);
+        searchable.setTarget(target);
         searchable.setFavorite(favorite);
         searchable.setOrderParam(order);
 
