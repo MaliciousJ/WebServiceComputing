@@ -55,7 +55,7 @@
         </div>
         <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <button class="btn waves-effect waves-center" type="submit" name="action"
-                    onClick="Materialize.toast('SUBMIT', 1000)">Submit
+                    onClick="Materialize.toast('SUBMIT', 1000)" href="/translate/register">Submit
                 <i class="material-icons center">check_box</i>
             </button>
         </div>

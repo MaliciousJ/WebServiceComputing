@@ -65,10 +65,8 @@ public class HomeController {
         return "hello";
     }
 
-    @RequestMapping(value = "/requestMappingPostTest",
-            method = RequestMethod.POST)
-    @ResponseBody
+    @RequestMapping(method = RequestMethod.POST)
     public String requestMappingPostTest() {
-        return "hello";
+        return "/translate";
     }
 }

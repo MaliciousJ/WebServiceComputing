@@ -32,11 +32,12 @@ public class TranslateController {
         return "/translate/register";
     }
 
-    @PreAuthorize("hasRole('ROLE_USER')")
+    //@PreAuthorize("hasRole('ROLE_USER')")
     @Transactional
     @RequestMapping(value="/register", method= RequestMethod.POST)
     public String register(@ModelAttribute Translate trans) {
-        trans.setUserid(User.current().getId());
+        //trans.setUserid(User.current().getId());
+        trans.setFavorite(false);
         trans.setDate(new java.util.Date());
         translateService.register(trans);
         return "redirect:/translate/list";
@@ -51,9 +52,6 @@ public class TranslateController {
         List<Translate> translates = translateMapper.findByScript(searchable);
         System.out.println("translates = " + translates);
         model.addAttribute("translate", translates);
-
-
-
 
         return "/translate/list";
     }
