@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import javax.inject.Inject;
 import java.util.List;
 
@@ -54,5 +53,18 @@ public class TranslateController {
         model.addAttribute("translate", translates);
 
         return "/translate/list";
+
+    }
+
+    @Transactional
+    @RequestMapping(value = "/delete", method = RequestMethod.GET)
+    public String delete(@RequestParam int id)
+    {
+        User user = User.current();
+
+        if(user.getId() == translateMapper.findOne(id).getUserid())
+            translateMapper.delete(id);
+
+        return "redirect:/book/list";
     }
 }

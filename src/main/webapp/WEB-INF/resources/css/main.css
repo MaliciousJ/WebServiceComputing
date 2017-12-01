@@ -18,7 +18,10 @@
 	border: solid 1px #fff; background: #bbb; border-radius: 50%;
 }
 #btn-mic.on span { background: green; }
-
+#icon-music {
+	display: none;
+	position: absolute; top: -7px; right: 30px; font-size: 80px;
+}
 ul li { font-size: 1em; }
 
 .red 		{ background: red; }

@@ -68,7 +68,6 @@ public class BookController {
             deleteForce(id);
 
         return "redirect:/book/list";
-
     }
 
 
