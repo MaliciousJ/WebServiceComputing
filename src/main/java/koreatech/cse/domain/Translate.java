@@ -5,10 +5,29 @@ import java.util.Date;
 
 public class Translate implements Serializable {
     private int id;
-    private String language;
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    private String source;
+    private String target;
     private String original; // Original
     private String translated; // Translated
     private int userid;
+
+
+    public String getTarget() {
+        return target;
+    }
+
+    public void setTarget(String target) {
+        this.target = target;
+    }
 
     public String getOriginal() {
         return original;
@@ -54,16 +73,6 @@ public class Translate implements Serializable {
     }
 
 
-    public String getLanguage() {
-        return language;
-    }
-
-    public void setLanguage(String language) {
-        this.language = language;
-    }
-
-
-
     public boolean isFavorite() {
         return favorite;
     }
@@ -82,12 +91,13 @@ public class Translate implements Serializable {
     public String toString() {
         return "Translate{" +
                 "id=" + id +
-                ", language='" + language + '\'' +
-                ", origin='" + original + '\'' +
-                ", trans='" + translated + '\'' +
-                ", userid=" + userid + '\'' +
-                ", favorite='" + favorite + '\'' +
-                ", datetime='" + date +
+                ", source='" + source + '\'' +
+                ", target='" + target + '\'' +
+                ", original='" + original + '\'' +
+                ", translated='" + translated + '\'' +
+                ", userid=" + userid +
+                ", favorite=" + favorite +
+                ", date='" + date + '\'' +
                 '}';
     }
 }

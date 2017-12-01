@@ -14,7 +14,7 @@ public class TranslateService {
 
 
     public Boolean register(Translate trans) {
-        if(trans.getLanguage() == null || trans.getOriginal() ==  null)
+        if(trans.getOriginal() == null || trans.getSource()==  null || trans.getTranslated()==  null || trans.getTarget()==  null)
             return false;
 
         translateMapper.insert(trans);

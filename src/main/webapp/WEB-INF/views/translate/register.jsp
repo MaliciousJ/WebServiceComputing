@@ -38,7 +38,8 @@
       </div>
     </nav>
     <form:form modelAttribute="Translate">
-      Language: <form:input path="language"/><br/>
+      Source: <form:input path="source"/><br/>
+      Target: <form:input path="target"/><br/>
       Original: <form:input path="original"/><br/>
       Translated:<br/>
 
