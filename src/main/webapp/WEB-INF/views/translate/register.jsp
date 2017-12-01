@@ -40,12 +40,12 @@
     <form:form modelAttribute="Translate">
       Language: <form:input path="language"/><br/>
       Original: <form:input path="original"/><br/>
-      Translated: <form:input path="translated" /><br/>
-      <input type="submit" value="Register"/>
+      Translated:<br/>
+
 
     <div id="result">
       <span class="final" id="final_span"></span>
-      <span class="interim" id="interim_span"></span>
+      <form:input path="translated" class="interim" id="interim_span"/>
     </div>
 
     <div class="fixed-action-btn" style="bottom: 35px; right: 230px;">
@@ -58,6 +58,7 @@
                                                                                                       Materialize.toast('SUBMIT', 1000);
                                                                                                       "><i class="material-icons">stop</i></a>
     </div>
+      <input type="submit" value="Register" id="trans_submit" style="display:none/>
     </form:form>
   </div>
 
@@ -79,6 +80,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 <script>
+
     var auth, database, userInfo, selectedKey;
     // Initialize Firebase
     var config = {

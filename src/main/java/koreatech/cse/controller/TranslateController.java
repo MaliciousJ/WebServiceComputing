@@ -60,9 +60,9 @@ public class TranslateController {
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
     public String delete(@RequestParam int id)
     {
-        User user = User.current();
+       // User user = User.current();
 
-        if(user.getId() == translateMapper.findOne(id).getUserid())
+       // if(user.getId() == translateMapper.findOne(id).getUserid())
             translateMapper.delete(id);
 
         return "redirect:/book/list";
