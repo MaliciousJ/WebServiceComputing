@@ -45,7 +45,7 @@
 
     <div id="result">
       <span class="final" id="final_span"></span>
-      <form:input path="translated" class="interim" id="interim_span"/>
+      <form:label path="translated" class="interim" id="interim_span"/>
     </div>
 
     <div class="fixed-action-btn" style="bottom: 35px; right: 230px;">
@@ -56,9 +56,10 @@
 
       <a id="btn-mic2" class="btn-floating btn-large waves-effect waves-light red" onclick="save_data(document.getElementById('interim_span').innerHTML);
                                                                                                       Materialize.toast('SUBMIT', 1000);
+                                                                                                      regist();
                                                                                                       "><i class="material-icons">stop</i></a>
     </div>
-      <input type="submit" value="Register" id="trans_submit" style="display:none/>
+      <input type="submit" value="Register" id="trans_submit" onclick=""/>
     </form:form>
   </div>
 
@@ -187,7 +188,6 @@
             });
         }
     }
-
 
     if (typeof webkitSpeechRecognition != 'function') {
         alert('크롬에서만 동작 합니다.');
@@ -353,6 +353,11 @@
             }
         });
     }
+
+    function regist() {
+        document.getElementById("interim_span").setAttribute(value)
+    }
+
 
     $btnMic.click(start);
     $('#btn-tts').click(function() {

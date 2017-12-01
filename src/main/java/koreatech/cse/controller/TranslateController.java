@@ -65,6 +65,6 @@ public class TranslateController {
        // if(user.getId() == translateMapper.findOne(id).getUserid())
             translateMapper.delete(id);
 
-        return "redirect:/book/list";
+        return "redirect:/tranlate/register";
     }
 }
