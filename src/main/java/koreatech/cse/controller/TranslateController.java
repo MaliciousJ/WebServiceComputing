@@ -52,9 +52,19 @@ public class TranslateController {
         System.out.println("translates = " + translates);
         model.addAttribute("translate", translates);
 
-
-
-
         return "/translate/list";
+    }
+
+
+    @Transactional
+    @RequestMapping(value = "/delete", method = RequestMethod.GET)
+    public String delete(@RequestParam int id)
+    {
+        User user = User.current();
+
+        if(user.getId() == translateMapper.findOne(id).getUserid())
+            translateMapper.delete(id);
+
+        return "redirect:/book/list";
     }
 }
