@@ -2,10 +2,10 @@ package koreatech.cse.controller;
 
 import koreatech.cse.domain.Searchable;
 import koreatech.cse.domain.Translate;
-import koreatech.cse.domain.User;
 import koreatech.cse.repository.TranslateMapper;
 import koreatech.cse.service.TranslateService;
-import org.springframework.security.access.prepost.PreAuthorize;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import javax.inject.Inject;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -21,9 +22,6 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.List;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 
 @Controller
 @RequestMapping("/translate") // /translate/list, /translate/register에서 테스트 가능
@@ -56,6 +54,9 @@ public class TranslateController {
         System.out.println("");
         try {
             String text = URLEncoder.encode(trans.getOriginal(), "UTF-8"); // 번역할 문장 입력
+            System.out.println("|" + text + "|");
+            System.out.println("|" + trans.getOriginal() + "|");
+
             String apiURL = "https://openapi.naver.com/v1/language/translate";
             URL url = new URL(apiURL);
             HttpURLConnection con = (HttpURLConnection)url.openConnection();
