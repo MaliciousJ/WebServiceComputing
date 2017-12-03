@@ -53,5 +53,6 @@
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:3.2.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-taglibs:3.2.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-acl:3.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.googlecode.json-simple:json-simple:1.1" level="project" />
   </component>
 </module>

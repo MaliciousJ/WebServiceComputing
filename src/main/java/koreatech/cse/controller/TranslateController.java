@@ -123,7 +123,7 @@ public class TranslateController {
         }
 
         translateService.register(trans);
-        return "redirect:/translate/register";
+        return "redirect:/translate/list";
     }
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String list(Model model, @RequestParam(required=false) String source, @RequestParam(required=false) String target, @RequestParam(required=false) boolean favorite, @RequestParam(required=false) String order) {

@@ -32,6 +32,7 @@
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:3.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-taglibs:3.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.security:spring-security-acl:3.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: com.googlecode.json-simple:json-simple:1.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">
