@@ -54,7 +54,7 @@
 
     <div class="fixed-action-btn" style="bottom: 35px; right: 170px;">
 
-      <a id="btn-mic2" class="btn-floating btn-large waves-effect waves-light red" onclick="save_data(document.getElementById('interim_span').innerHTML);
+      <a id="btn-mic2" class="btn-floating btn-large waves-effect waves-light red" onclick="save_data(document.getElementById('final_span').innerHTML);
                                                                                                       Materialize.toast('SUBMIT', 1000);
                                                                                                       regist();
                                                                                                       "><i class="material-icons">stop</i></a>

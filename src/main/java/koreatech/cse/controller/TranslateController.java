@@ -50,6 +50,7 @@ public class TranslateController {
         String target = trans.getTarget(); // 번역결과 언어
         trans.setFavorite(false);
         trans.setDate(new java.util.Date());
+        System.out.println("1");
         try {
             String text = URLEncoder.encode(trans.getOriginal(), "UTF-8"); // 번역할 문장 입력
             String apiURL = "https://openapi.naver.com/v1/language/translate";
@@ -58,7 +59,7 @@ public class TranslateController {
             con.setRequestMethod("POST");
             con.setRequestProperty("X-Naver-Client-Id", clientId);
             con.setRequestProperty("X-Naver-Client-Secret", clientSecret);
-
+            System.out.println("2");
             // post request
             String postParams = "source=" + source + "&target=" + target + "&text=" + text;
             con.setDoOutput(true);
@@ -68,10 +69,13 @@ public class TranslateController {
             wr.close();
             int responseCode = con.getResponseCode();
             BufferedReader br;
+            System.out.println("3");
             if(responseCode==200) { // 정상 호출
                 br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                System.out.println("success 200");
             } else {  // 에러 발생
                 br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
+                System.out.println("error 200");
             }
             String inputLine;
             StringBuffer response = new StringBuffer();
@@ -83,10 +87,11 @@ public class TranslateController {
             trans.setTranslated(response.toString()); // 번역결과 문장
         } catch (Exception e) {
             System.out.println(e);
+            System.out.println("here");
         }
 
         translateService.register(trans);
-        return "redirect:/translate/list";
+        return "redirect:/translate/register";
     }
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String list(Model model, @RequestParam(required=false) String source, @RequestParam(required=false) String target, @RequestParam(required=false) boolean favorite, @RequestParam(required=false) String order) {

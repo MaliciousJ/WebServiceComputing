@@ -45,19 +45,11 @@ public interface TranslateMapper {
             + "SELECT * FROM TRANSLATE"
             + "<if test='source != null'> WHERE SOURCE = #{source}</if>"
             + "<if test='source != null and target != null'> OR TARGET = #{target}</if>"
-            + "<if test='source != null and target != null and favorite != null'> OR FAVORITE = #{favorite}"
+            + "<if test='source != null and target != null and favorite != null'> OR FAVORITE = #{favorite}</if>"
             + "<if test='orderParam != null'>ORDER BY ${orderParam} DESC</if>"
             + "</script>")
     //@formatter on
     List<Translate> findByScript(Searchable searchable);
 
-    //@formatter off
-    @Select("<script>"
-            + "SELECT * FROM TRANSLATE"
-            + "<if test='stringList != null and !stringList.empty'> "
-            + "WHERE NAME IN <foreach item='item' collection='stringList' open='(' separator=',' close=')'>#{item}</foreach></if>"
-            + "</script>")
-    //@formatter on
-    List<Translate> findByList(@Param("stringList") List<String> stringList);
 
 }
