@@ -45,7 +45,7 @@ public interface TranslateMapper {
             + "SELECT * FROM TRANSLATE"
             + "<if test='source != null'> WHERE SOURCE = #{source}</if>"
             + "<if test='source != null and target != null'> OR TARGET = #{target}</if>"
-            + "<if test='source != null and target != null and favorite != null'> OR FAVORITE = #{favorite}"
+            + "<if test='source != null and target != null and favorite != null'> OR FAVORITE = #{favorite}</if>"
             + "<if test='orderParam != null'>ORDER BY ${orderParam} DESC</if>"
             + "</script>")
     //@formatter on

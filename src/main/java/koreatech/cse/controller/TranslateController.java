@@ -103,6 +103,21 @@ public class TranslateController {
         return "/translate/list";
 
     }
+    @RequestMapping(value = "/listForTest", method = RequestMethod.GET)
+    public String listForTest(Model model, @RequestParam(required=false) String source, @RequestParam(required=false) String target, @RequestParam(required=false) boolean favorite, @RequestParam(required=false) String order) {
+        Searchable searchable = new Searchable();
+        searchable.setSource(source);
+        searchable.setTarget(target);
+        searchable.setFavorite(favorite);
+        searchable.setOrderParam(order);
+
+        List<Translate> translates = translateMapper.findByScript(searchable);
+        System.out.println("translates = " + translates);
+        model.addAttribute("translate", translates);
+
+        return "/translate/listForTest";
+
+    }
 
     @Transactional
     @RequestMapping(value = "/delete", method = RequestMethod.GET)
