@@ -32,7 +32,6 @@
           <i class="material-icons circle red">a</i>
           <span class="title"></span><p class='txt'>${u.original}</p>
           <span class="title"></span><p class='txt'>${u.translated}</p>
-          <a href="#!" onClick="fn_delete_data('+key+')" class="secondary-content"><i class="material-icons">clear</i></a>
         </li>
       </ul>
     </c:forEach>
