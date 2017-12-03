@@ -3,7 +3,18 @@
 <html>
 <head>
   <title>Translate list</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <link href="/resources/css/main.css" rel="stylesheet" type="text/css" />
+  <script src="/resources/js/googleAPI.js"></script>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <style>
+    ::-webkit-scrollbar {
+      display:none;
+    }
+    .collection { cursor: pointer;}
     table, tr, td {
       border: 1px solid black;
       text-align:center;
@@ -11,40 +22,22 @@
   </style>
 </head>
 <body>
-<a href="/translate/register">새 번역 등록하기</a>
-<br/>
-<table>
-  <thead>
-  <tr>
-    <td>ID</td>
-    <td>source</td>
-    <td>target</td>
-    <td>원문</td>
-    <td>번역문</td>
-    <td>즐겨찾기 여부</td>
-    <td>등록자</td>
-    <td>등록일</td>
-    <td></td>
-  </tr>
-  </thead>
-  <tbody>
-  <c:forEach var="u" items="${translate}">
-    <tr>
-      <td>${u.id}</td>
-      <td>${u.source}</td>
-      <td>${u.target}</td>
-      <td>${u.original}</td>
-      <td>${u.translated}</td>
-      <td>${u.favorite}</td>
-      <td>${u.userid}</td>
-      <td>${u.date}</td>
-      <td>
-        <a href="/translate/delete?id=${u.id}">삭제</a>
-      </td>
-    </tr>
-  </c:forEach>
-  </tbody>
-</table>
+<div class="row">
+  <div class="col s3" style="padding:0; margin:0; overflow-y:auto; overflow-x:hidden; height:540px; -ms-overflow-style: none;">
+
+    <c:forEach var="u" items="${translate}">
+      <!-- Grey navigation panel -->
+      <ul class="collection"  style="padding:0; margin:0;">
+        <li id='"+key+"' class="collection-item avatar" onclick="fn_get_data_one(this.id);" >
+          <i class="material-icons circle red">a</i>
+          <span class="title"></span><p class='txt'>${u.original}</p>
+          <span class="title"></span><p class='txt'>${u.translated}</p>
+          <a href="#!" onClick="fn_delete_data('+key+')" class="secondary-content"><i class="material-icons">clear</i></a>
+        </li>
+      </ul>
+    </c:forEach>
+  </div>
+</div>
 
 </body>
 </html>
