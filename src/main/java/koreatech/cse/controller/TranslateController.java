@@ -14,6 +14,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import javax.inject.Inject;
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.List;
 
 @Controller
@@ -28,16 +34,57 @@ public class TranslateController {
     public String register(Model model) {
         Translate translate = new Translate();
         model.addAttribute("Translate", translate);
+
         return "/translate/register";
     }
 
     //@PreAuthorize("hasRole('ROLE_USER')")
     @Transactional
+
     @RequestMapping(value="/register", method= RequestMethod.POST)
     public String register(@ModelAttribute Translate trans) {
         //trans.setUserid(User.current().getId());
+        String clientId = "XrGbQvmHd8WcGPKUWI7F";//애플리케이션 클라이언트 아이디값";
+        String clientSecret = "wmEiG9iXmw";//애플리케이션 클라이언트 시크릿값";
+        String source = trans.getSource(); // 번역할 언어
+        String target = trans.getTarget(); // 번역결과 언어
         trans.setFavorite(false);
         trans.setDate(new java.util.Date());
+        try {
+            String text = URLEncoder.encode(trans.getOriginal(), "UTF-8"); // 번역할 문장 입력
+            String apiURL = "https://openapi.naver.com/v1/language/translate";
+            URL url = new URL(apiURL);
+            HttpURLConnection con = (HttpURLConnection)url.openConnection();
+            con.setRequestMethod("POST");
+            con.setRequestProperty("X-Naver-Client-Id", clientId);
+            con.setRequestProperty("X-Naver-Client-Secret", clientSecret);
+
+            // post request
+            String postParams = "source=" + source + "&target=" + target + "&text=" + text;
+            con.setDoOutput(true);
+            DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+            wr.writeBytes(postParams);
+            wr.flush();
+            wr.close();
+            int responseCode = con.getResponseCode();
+            BufferedReader br;
+            if(responseCode==200) { // 정상 호출
+                br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            } else {  // 에러 발생
+                br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
+            }
+            String inputLine;
+            StringBuffer response = new StringBuffer();
+            while ((inputLine = br.readLine()) != null) {
+                response.append(inputLine);
+            }
+            br.close();
+            System.out.println(response.toString());
+            trans.setTranslated(response.toString()); // 번역결과 문장
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
         translateService.register(trans);
         return "redirect:/translate/list";
     }

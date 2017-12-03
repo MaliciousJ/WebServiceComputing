@@ -11,11 +11,11 @@ import java.util.List;
 
 @Repository
 public interface TranslateMapper {
-    @Insert("INSERT INTO TRANSLATE (SOURCE, TARGET, ORIGINAL, TRANSLATED, USERID, FAVORITE, DATE) VALUES (#{source}, #{original}, #{translated}, #{userid}, #{favorite}, #{date})")
+    @Insert("INSERT INTO TRANSLATE (SOURCE, TARGET, ORIGINAL, TRANSLATED, USERID, FAVORITE, DATE) VALUES (#{source}, #{target}, #{original}, #{translated}, #{userid}, #{favorite}, #{date})")
     @SelectKey(statement = "SELECT LAST_INSERT_ID()", keyProperty = "id", before = false, resultType = int.class)
     void insert(Translate translate);
 
-    @Update("UPDATE TRANSLATE SET SOURCE = #{source}, ORIGINAL = #{original}, TRANSLATED = #{translated}, USERID = #{userid}, FAVORITE = #{favorite} WHERE ID = #{id}")
+    @Update("UPDATE TRANSLATE SET SOURCE = #{source}, TARGET = #{target}, ORIGINAL = #{original}, TRANSLATED = #{translated}, USERID = #{userid}, FAVORITE = #{favorite} WHERE ID = #{id}")
     void update(Translate translate);
 
     @Select("SELECT * FROM TRANSLATE WHERE ID = #{id}")
@@ -36,6 +36,7 @@ public interface TranslateMapper {
     @Delete("DELETE FROM TRANSLATE WHERE ID = #{id}")
     void delete(@Param("id") int id);
 
+
     @SelectProvider(type = UserSqlProvider.class, method = "findAllByProvider")
     List<Translate> findByProvider(Searchable searchable);
 
@@ -49,4 +50,14 @@ public interface TranslateMapper {
             + "</script>")
     //@formatter on
     List<Translate> findByScript(Searchable searchable);
+
+    //@formatter off
+    @Select("<script>"
+            + "SELECT * FROM TRANSLATE"
+            + "<if test='stringList != null and !stringList.empty'> "
+            + "WHERE NAME IN <foreach item='item' collection='stringList' open='(' separator=',' close=')'>#{item}</foreach></if>"
+            + "</script>")
+    //@formatter on
+    List<Translate> findByList(@Param("stringList") List<String> stringList);
+
 }

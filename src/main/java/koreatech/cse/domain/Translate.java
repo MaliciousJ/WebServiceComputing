@@ -19,6 +19,8 @@ public class Translate implements Serializable {
     private String original; // Original
     private String translated; // Translated
     private int userid;
+    private boolean favorite;
+    private String date;
 
 
     public String getTarget() {
@@ -52,9 +54,6 @@ public class Translate implements Serializable {
     public void setDate(String date) {
         this.date = date;
     }
-
-    private boolean favorite;
-    private String date;
 
     public int getId() {
         return id;

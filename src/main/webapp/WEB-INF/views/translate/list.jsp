@@ -17,7 +17,8 @@
   <thead>
   <tr>
     <td>ID</td>
-    <td>언어</td>
+    <td>source</td>
+    <td>target</td>
     <td>원문</td>
     <td>번역문</td>
     <td>즐겨찾기 여부</td>
@@ -30,7 +31,8 @@
   <c:forEach var="u" items="${translate}">
     <tr>
       <td>${u.id}</td>
-      <td>${u.language}</td>
+      <td>${u.source}</td>
+      <td>${u.target}</td>
       <td>${u.original}</td>
       <td>${u.translated}</td>
       <td>${u.favorite}</td>

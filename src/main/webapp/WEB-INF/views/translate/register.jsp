@@ -40,13 +40,12 @@
     <form:form modelAttribute="Translate">
       Source: <form:input path="source"/><br/>
       Target: <form:input path="target"/><br/>
-      Original: <form:input path="original"/><br/>
-      Translated:<br/>
+      Voice Recording:<br/>
 
 
     <div id="result">
-      <span class="final" id="final_span"></span>
-      <form:label path="translated" class="interim" id="interim_span"/>
+      <form:label path="original"  class="final" id="final_span"/>
+      <span class="interim" id="interim_span"/></span>
     </div>
 
     <div class="fixed-action-btn" style="bottom: 35px; right: 230px;">
