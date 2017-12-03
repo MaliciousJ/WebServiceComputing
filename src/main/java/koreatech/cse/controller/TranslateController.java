@@ -21,6 +21,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.List;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 @Controller
 @RequestMapping("/translate") // /translate/list, /translate/register에서 테스트 가능
@@ -50,7 +53,7 @@ public class TranslateController {
         String target = trans.getTarget(); // 번역결과 언어
         trans.setFavorite(false);
         trans.setDate(new java.util.Date());
-        System.out.println("1");
+        System.out.println("");
         try {
             String text = URLEncoder.encode(trans.getOriginal(), "UTF-8"); // 번역할 문장 입력
             String apiURL = "https://openapi.naver.com/v1/language/translate";
@@ -84,7 +87,36 @@ public class TranslateController {
             }
             br.close();
             System.out.println(response.toString());
-            trans.setTranslated(response.toString()); // 번역결과 문장
+
+            String responseStr = response.toString();
+            JSONParser jsonParser = new JSONParser();
+
+            //JSON데이터를 넣어 JSON Object 로 만들어 준다.
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(responseStr);
+            //books의 배열을 추출
+            /*
+            JSONArray msgInfoArray = (JSONArray) jsonObject.get("message");
+            JSONArray msgArr = (JSONArray) (msgInfoArray.get(0));
+            System.out.println(msgInfoArray.toString());
+            for(int i=0; i<msgInfoArray.size(); i++){
+              //배열 안에 있는것도 JSON형식 이기 때문에 JSON Object 로 추출
+                JSONObject msgObject = (JSONObject) (msgArr.get(i));
+                System.out.println("5");
+                //JSON name으로 추출
+                System.out.println("bookInfo: name==>"+msgObject.get("@type"));
+                System.out.println("bookInfo: writer==>"+msgObject.get("@service"));
+                System.out.println("bookInfo: price==>"+msgObject.get("@version"));
+                System.out.println("bookInfo: genre==>"+msgObject.get("result"));
+
+                //responseStr = msgObject.get("result").toString();
+
+            }*/
+            //trans.setTranslated( responseStr );
+            int start_idx = responseStr.indexOf("translatedText") + 17;
+            int end_idx = responseStr.indexOf("srcLangType") - 3;
+            responseStr = responseStr.substring(start_idx, end_idx);
+            trans.setTranslated(responseStr);
+            // 번역결과 문장
         } catch (Exception e) {
             System.out.println(e);
             System.out.println("here");

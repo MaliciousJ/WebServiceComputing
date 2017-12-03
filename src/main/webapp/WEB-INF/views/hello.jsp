@@ -32,12 +32,17 @@
             <div class="nav-wrapper">
                 <div class="col s12">
                     <a href="#!" class="breadcrumb"><span id="modifyDate"></span></a>
-
+                    <button class="btn waves-effect waves-center" type="submit" name="action"
+                            style="width: 100pt; height: 48pt;  right: 10px; font-size: 20pt; border: 0px solid #7a157a;
+                            -moz-box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
+                           -webkit-box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
+                           box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
+                          font-weight: bold; background-color: #ee6e73;"
+                            onClick="location.href='/'";>BACK
+                    </button>
                 </div>
             </div>
         </nav>
-        <a href="/user/signin">로그인</a>
-        <a href="/translate/register">번역</a>
         <div class="fixed-action-btn" style="bottom: 600px; right: 300px;">
             <button class="btn waves-effect waves-center" type="button" onClick="location.href='/user/signin'" ; name="memo">MEMO
 

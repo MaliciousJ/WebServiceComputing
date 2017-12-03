@@ -33,18 +33,27 @@
       <div class="nav-wrapper">
         <div class="col s12">
           <a href="#!" class="breadcrumb"><span id="modifyDate"></span></a>
-
+          <button class="btn waves-effect waves-center" type="submit" name="action"
+                  style="width: 100pt; height: 48pt;  right: 10px; font-size: 20pt; border: 0px solid #7a157a;
+                            -moz-box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
+                           -webkit-box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
+                           box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
+                          font-weight: bold; background-color: #ee6e73;"
+                  onClick="location.href='/'";>BACK
+          </button>
         </div>
       </div>
     </nav>
     <form:form modelAttribute="Translate">
       Source: <form:input path="source"/><br/>
       Target: <form:input path="target"/><br/>
+      Original: <form:input path="original"/><br/>
       Voice Recording:<br/>
 
 
     <div id="result">
-      <form:label path="original"  class="final" id="final_span"/>
+      <!--<form:label path="original"  class="final" id="final_span"/>-->
+      <span class="final" id="final_span"/></span>
       <span class="interim" id="interim_span"/></span>
     </div>
 
@@ -56,7 +65,6 @@
 
       <a id="btn-mic2" class="btn-floating btn-large waves-effect waves-light red" onclick="save_data(document.getElementById('final_span').innerHTML);
                                                                                                       Materialize.toast('SUBMIT', 1000);
-                                                                                                      regist();
                                                                                                       "><i class="material-icons">stop</i></a>
     </div>
       <input type="submit" value="Register" id="trans_submit" onclick=""/>
@@ -352,10 +360,6 @@
 
             }
         });
-    }
-
-    function regist() {
-        document.getElementById("interim_span").setAttribute(value)
     }
 
 
