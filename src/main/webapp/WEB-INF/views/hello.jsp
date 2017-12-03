@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,11 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <link href="/resources/css/main.css" rel="stylesheet" type="text/css" />
-
-    <script src='/resources/js/annyang.js'></script>
-    <script src='/resources/js/annyangAPI.js'></script>
-    <script src="/resources/js/googleAPI.js"></script>
-    <title></title>
     <script src="/resources/js/googleAPI.js"></script>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -42,29 +36,22 @@
                 </div>
             </div>
         </nav>
+        <a href="/user/signin">로그인</a>
+        <a href="/translate/register">번역</a>
+        <div class="fixed-action-btn" style="bottom: 600px; right: 300px;">
+            <button class="btn waves-effect waves-center" type="button" onClick="location.href='/user/signin'" ; name="memo">MEMO
 
-        <textarea style="height:300px;" class="textarea" width="100%" rows="100" placeholder="새로운 메모를 입력해보세요^^"></textarea>
-
-        <div id="result">
-            <span class="final" id="final_span"></span>
-            <span class="interim" id="interim_span"></span>
-        </div>
-
-        <div class="fixed-action-btn" style="bottom: 35px; right: 230px;">
-            <a id="test" class="btn-floating btn-large waves-effect waves-light red" onclick="start();"><i class="material-icons">mic</i></a>
-        </div>
-
-        <div class="fixed-action-btn" style="bottom: 35px; right: 170px;">
-            <a id="btn-mic2" class="btn-floating btn-large waves-effect waves-light red" onclick="save_data(document.getElementById('interim_span').innerHTML);
-                                                                                                            Materialize.toast('SUBMIT', 1000);
-                                                                                                            "><i class="material-icons">stop</i></a>
-        </div>
-        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-            <button class="btn waves-effect waves-center" type="submit" name="action"
-                    onClick="Materialize.toast('SUBMIT', 1000)" href="/translate/register">Submit
-                <i class="material-icons center">check_box</i>
             </button>
         </div>
+
+        <div class="fixed-action-btn" style="bottom: 600px; right: 70px;">
+            <button class="btn waves-effect waves-center" type="button" onClick="location.href='/translate/register'" name="translation">TRANSLATION
+
+            </button>
+        </div>
+
+
+
     </div>
 
 
@@ -80,10 +67,6 @@
         </div>
         </div>
     </div>
-</div>
-<div id="result2">
-    <span class="final" id="final_span2"></span>
-    <span class="interim" id="interim_span2"></span>
 </div>
 
 <!--Import jQuery before materialize.js-->
@@ -392,14 +375,5 @@
 </script>
 
 
-<script type = "text/javascript">
-    var t = document.getElementById('btn-mic');
-    t.addEventListener('click', function(event){
-        start();
-    });
-    t.addEventListener('click', function(event){
-        start2();
-    });
-</script>
-
 </body>
+</html>
