@@ -4,8 +4,6 @@ import koreatech.cse.domain.Searchable;
 import koreatech.cse.domain.Translate;
 import koreatech.cse.repository.TranslateMapper;
 import koreatech.cse.service.TranslateService;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -44,84 +42,13 @@ public class TranslateController {
 
     @RequestMapping(value="/register", method= RequestMethod.POST)
     public String register(@ModelAttribute Translate trans) {
-        //trans.setUserid(User.current().getId());
-        String clientId = "XrGbQvmHd8WcGPKUWI7F";//애플리케이션 클라이언트 아이디값";
-        String clientSecret = "wmEiG9iXmw";//애플리케이션 클라이언트 시크릿값";
+
         String source = trans.getSource(); // 번역할 언어
         String target = trans.getTarget(); // 번역결과 언어
+
         trans.setFavorite(false);
         trans.setDate(new java.util.Date());
-        System.out.println("");
-        try {
-            String text = URLEncoder.encode(trans.getOriginal(), "UTF-8"); // 번역할 문장 입력
-            System.out.println("|" + text + "|");
-            System.out.println("|" + trans.getOriginal() + "|");
-
-            String apiURL = "https://openapi.naver.com/v1/language/translate";
-            URL url = new URL(apiURL);
-            HttpURLConnection con = (HttpURLConnection)url.openConnection();
-            con.setRequestMethod("POST");
-            con.setRequestProperty("X-Naver-Client-Id", clientId);
-            con.setRequestProperty("X-Naver-Client-Secret", clientSecret);
-            System.out.println("2");
-            // post request
-            String postParams = "source=" + source + "&target=" + target + "&text=" + text;
-            con.setDoOutput(true);
-            DataOutputStream wr = new DataOutputStream(con.getOutputStream());
-            wr.writeBytes(postParams);
-            wr.flush();
-            wr.close();
-            int responseCode = con.getResponseCode();
-            BufferedReader br;
-            System.out.println("3");
-            if(responseCode==200) { // 정상 호출
-                br = new BufferedReader(new InputStreamReader(con.getInputStream()));
-                System.out.println("success 200");
-            } else {  // 에러 발생
-                br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
-                System.out.println("error 200");
-            }
-            String inputLine;
-            StringBuffer response = new StringBuffer();
-            while ((inputLine = br.readLine()) != null) {
-                response.append(inputLine);
-            }
-            br.close();
-            System.out.println(response.toString());
-
-            String responseStr = response.toString();
-            JSONParser jsonParser = new JSONParser();
-
-            //JSON데이터를 넣어 JSON Object 로 만들어 준다.
-            JSONObject jsonObject = (JSONObject) jsonParser.parse(responseStr);
-            //books의 배열을 추출
-            /*
-            JSONArray msgInfoArray = (JSONArray) jsonObject.get("message");
-            JSONArray msgArr = (JSONArray) (msgInfoArray.get(0));
-            System.out.println(msgInfoArray.toString());
-            for(int i=0; i<msgInfoArray.size(); i++){
-              //배열 안에 있는것도 JSON형식 이기 때문에 JSON Object 로 추출
-                JSONObject msgObject = (JSONObject) (msgArr.get(i));
-                System.out.println("5");
-                //JSON name으로 추출
-                System.out.println("bookInfo: name==>"+msgObject.get("@type"));
-                System.out.println("bookInfo: writer==>"+msgObject.get("@service"));
-                System.out.println("bookInfo: price==>"+msgObject.get("@version"));
-                System.out.println("bookInfo: genre==>"+msgObject.get("result"));
-
-                //responseStr = msgObject.get("result").toString();
-
-            }*/
-            //trans.setTranslated( responseStr );
-            int start_idx = responseStr.indexOf("translatedText") + 17;
-            int end_idx = responseStr.indexOf("srcLangType") - 3;
-            responseStr = responseStr.substring(start_idx, end_idx);
-            trans.setTranslated(responseStr);
-            // 번역결과 문장
-        } catch (Exception e) {
-            System.out.println(e);
-            System.out.println("here");
-        }
+        trans.setTranslated(translate_Naver(source, target, trans.getOriginal(), "NMT"));
 
         translateService.register(trans);
         return "redirect:/translate/list";
@@ -168,4 +95,62 @@ public class TranslateController {
 
         return "redirect:/tranlate/register";
     }
+
+    public String translate_Naver(String source, String target, String original, final String KIND){
+        //trans.setUserid(User.current().getId());
+        String clientId = "XrGbQvmHd8WcGPKUWI7F";//애플리케이션 클라이언트 아이디값";
+        String clientSecret = "wmEiG9iXmw";//애플리케이션 클라이언트 시크릿값";
+        String apiURL = null;
+        if( KIND == "NMT" )
+            apiURL = "https://openapi.naver.com/v1/language/translate";
+        else if ( KIND == "SMT" )
+            apiURL = "https://openapi.naver.com/v1/language/translate";
+
+        try {
+            String text = URLEncoder.encode(original, "UTF-8"); // 번역할 문장 입력
+            URL url = new URL(apiURL);
+            HttpURLConnection con = (HttpURLConnection)url.openConnection();
+            con.setRequestMethod("POST");
+            con.setRequestProperty("X-Naver-Client-Id", clientId);
+            con.setRequestProperty("X-Naver-Client-Secret", clientSecret);
+
+            // post request
+            String postParams = "source=" + source + "&target=" + target + "&text=" + text;
+            con.setDoOutput(true);
+            DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+            wr.writeBytes(postParams);
+            wr.flush();
+            wr.close();
+            int responseCode = con.getResponseCode();
+            BufferedReader br;
+
+            if(responseCode==200) { // 정상 호출
+                br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                System.out.println("success 200");
+            } else {  // 에러 발생
+                br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
+                System.out.println("error 200");
+            }
+            String inputLine;
+            StringBuffer response = new StringBuffer();
+            while ((inputLine = br.readLine()) != null) {
+                response.append(inputLine);
+            }
+            br.close();
+
+            System.out.println(response.toString());
+            String responseStr = response.toString();
+
+            int start_idx = responseStr.indexOf("translatedText") + 17;
+            int end_idx = responseStr.indexOf("srcLangType") - 3;
+            responseStr = responseStr.substring(start_idx, end_idx);
+            return responseStr;
+            // 번역결과 문장
+        } catch (Exception e) {
+            System.out.println(e);
+            System.out.println("here");
+        }
+        return null;
+    }
+
 }

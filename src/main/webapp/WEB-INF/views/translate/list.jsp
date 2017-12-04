@@ -23,15 +23,16 @@
 </head>
 <body>
 <div class="row">
-  <div class="col s3" style="padding:0; margin:0; overflow-y:auto; overflow-x:hidden; height:540px; -ms-overflow-style: none;">
+  <div class="col s3" style="padding:0; margin:0; overflow-y:auto; overflow-x:hidden; height:1080px; -ms-overflow-style: none;">
 
     <c:forEach var="u" items="${translate}">
       <!-- Grey navigation panel -->
       <ul class="collection"  style="padding:0; margin:0;">
         <li id='"+key+"' class="collection-item avatar" onclick="fn_get_data_one(this.id);" >
           <i class="material-icons circle red">a</i>
-          <span class="title"></span><p class='txt'>${u.original}</p>
-          <span class="title"></span><p class='txt'>${u.translated}</p>
+          <span class="title"></span><p class='txt'>#날짜 : ${u.date}</p>
+          <span class="title"></span><p class='txt'>#원문 : ${u.original}</p>
+          <span class="title"></span><p class='txt'>#번역결과 : ${u.translated}</p>
 
         </li>
       </ul>

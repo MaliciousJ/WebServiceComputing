@@ -35,7 +35,7 @@
                            -webkit-box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
                            box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
                           font-weight: bold; background-color: #ee6e73;"
-                            onClick="location.href='/'";>BACK
+                            onClick="location.href='/'" ;>BACK
                     </button>
                 </div>
             </div>
@@ -46,7 +46,7 @@
 
         <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <button class="btn waves-effect waves-center" type="submit" name="action"
-                    onClick="Materialize.toast('SUBMIT', 1000)">Submit
+                    onClick="location.href='/'; alertStr('Submit Done!') ">Submit
                 <i class="material-icons center">check_box</i>
             </button>
         </div>
@@ -113,7 +113,7 @@
             console.log(data.val());
 
             var key = data.key;
-            var txt =data.val().txt;
+            var txt = data.val().txt;
             var title = txt.substr(0, txt.indexOf('\n'));
             // 갱신
             $("#"+ key + " >.title").text(title);
@@ -184,11 +184,10 @@
         selectedKey=null;
     }
 
-    $(function(){
-        $(".textarea").blur(function(){
-            save_data( $(".textarea").val() );
-        });
-    });
+    function alertStr(msg) {
+        alert(msg);
+        save_data( $(".textarea").val() );
+    }
 
 </script>
 

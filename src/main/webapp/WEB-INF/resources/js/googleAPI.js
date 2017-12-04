@@ -6,30 +6,19 @@
  */
 function start() {
     if (typeof webkitSpeechRecognition != 'function') {
-<<<<<<< HEAD
        alert('크롬에서만 동작 합니다.');
         return false;
      }
-=======
-        alert('크롬에서만 동작 합니다.');
-        return false;
-    }
->>>>>>> 41a2a87436bffb6e7c57b0dda8929fc0400a0a3c
 
     var recognition = new webkitSpeechRecognition();
     var isRecognizing = false;
     var ignoreOnend = false;
     var finalTranscript = '';
-<<<<<<< HEAD
-
-=======
     var $btnMic = $('#btn-mic');
->>>>>>> 41a2a87436bffb6e7c57b0dda8929fc0400a0a3c
     var $result = $('#result');
     recognition.continuous = true;
     recognition.interimResults = true;
 
-<<<<<<< HEAD
     // 버튼을 눌렀을 때
      recognition.onstart = function() {
        console.log('onstart', arguments);
@@ -133,7 +122,6 @@ function start() {
 
     $btnMic.attr('class', 'off');
   };
-=======
     recognition.onstart = function() {
         console.log('onstart', arguments);
         isRecognizing = true;
@@ -223,7 +211,6 @@ function start() {
 
         $btnMic.attr('class', 'off');
     };
->>>>>>> 41a2a87436bffb6e7c57b0dda8929fc0400a0a3c
 
     var two_line = /\n\n/g;
     var one_line = /\n/g;
@@ -239,8 +226,7 @@ function start() {
         });
     }
 
-<<<<<<< HEAD
-    // 버튼이 눌렸을 때 번역 시작 함수수
+    // 버튼이 눌렸을 때 번역 시작 함수
     function start(event) {
         if (isRecognizing) {
         recognition.stop();
@@ -268,7 +254,6 @@ function start() {
         });
     }
 
-=======
     function start(event) {
         if (isRecognizing) {
             recognition.stop();
@@ -330,5 +315,4 @@ function start() {
     $('#btn-tts').click(function() {
         textToSpeech($('#final_span').text() || '전 음성 인식된 글자를 읽습니다.');
     });
->>>>>>> 41a2a87436bffb6e7c57b0dda8929fc0400a0a3c
 };

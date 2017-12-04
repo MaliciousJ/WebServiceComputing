@@ -6,9 +6,12 @@
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <link href="/resources/css/main.css" rel="stylesheet" type="text/css" />
     <script src="/resources/js/googleAPI.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
@@ -44,7 +47,7 @@
             </div>
         </nav>
         <div class="fixed-action-btn" style="bottom: 600px; right: 300px;">
-            <button class="btn waves-effect waves-center" type="button" onClick="location.href='/user/signin'" ; name="memo">MEMO
+            <button class="btn waves-effect waves-center" type="button" onClick="location.href='/memo'"; name="memo">MEMO
 
             </button>
         </div>
@@ -55,12 +58,7 @@
             </button>
         </div>
 
-
-
     </div>
-
-
-
     <div class="preloader-wrapper big active" style="position:absolute; z-index:1000; left:50%; top:50%; display:none;">
         <div class="spinner-layer spinner-blue-only">
             <div class="circle-clipper left">
@@ -75,10 +73,8 @@
 </div>
 
 <!--Import jQuery before materialize.js-->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
-<script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 <script>
+    <!-- 메모기능 -->
     var auth, database, userInfo, selectedKey;
     // Initialize Firebase
     var config = {
@@ -164,221 +160,145 @@
         initMemo();
     }
 
-    function save_data( txt ){
-        var memoRef = database.ref('memos/'+ userInfo.uid );
-        //var txt = $(".textarea").val();
-        if(txt == ''){
-            return;
-        }
-        if( selectedKey ){
-            memoRef = database.ref('memos/'+ userInfo.uid + '/' + selectedKey);
-            memoRef.update({
-                txt : txt,
-                createDate : new Date().getTime(),
-                updateDate : new Date().getTime()
-            });
-        } else{
-            // push
-            memoRef.push({
-                txt : txt,
-                createDate : new Date().getTime()
-            });
-        }
-    }
+    <!-- 음성인식 기능 -->
+     var recognition = new webkitSpeechRecognition();
+     var isRecognizing = false;
+     var ignoreOnend = false;
+     var finalTranscript = '';
+     var $btnMic = $('#btn-mic');
+     var $result = $('#result');
+     recognition.continuous = true;
+     recognition.interimResults = true;
 
-    function initMemo(){
-        $('.textarea').val('');
-        selectedKey=null;
-    }
+     recognition.onstart = function() {
+         console.log('onstart', arguments);
+         isRecognizing = true;
 
-    $(function(){
-        $(".textarea").blur(function(){
-            save_data( $(".textarea").val() );
-        });
-    });
+         //$btnMic.attr('class', 'on');
+     };
 
-    /*!
-     *
-     * WebRTC Lab
-     * @author dodortus (codejs.co.kr / dodortus@gmail.com)
-     *
-     */
-        if (typeof webkitSpeechRecognition != 'function') {
-            alert('크롬에서만 동작 합니다.');
-        }
+     recognition.onend = function() {
+         console.log('onend', arguments);
+         isRecognizing = false;
 
-        var recognition = new webkitSpeechRecognition();
-        var isRecognizing = false;
-        var ignoreOnend = false;
-        var finalTranscript = '';
-        var $btnMic = $('#btn-mic');
-        var $result = $('#result');
-        recognition.continuous = true;
-        recognition.interimResults = true;
+         if (ignoreOnend) {
+             return false;
+         }
 
-        recognition.onstart = function() {
-            console.log('onstart', arguments);
-            isRecognizing = true;
+         if (window.getSelection) {
+             window.getSelection().removeAllRanges();
+             var range = document.createRange();
+             range.selectNode(document.getElementById('final-span'));
+             window.getSelection().addRange(range);
+         }
 
-            //$btnMic.attr('class', 'on');
-        };
+     };
 
-        recognition.onend = function() {
-            console.log('onend', arguments);
-            isRecognizing = false;
+     recognition.onresult = function(event) {
+         console.log('onresult', event);
 
-            if (ignoreOnend) {
-                return false;
-            }
+         var interimTranscript = '';
+         if (typeof(event.results) == 'undefined') {
+             recognition.onend = null;
+             recognition.stop();
+             return;
+         }
 
+         for (var i = event.resultIndex; i < event.results.length; ++i) {
+             if (event.results[i].isFinal) {
+                 finalTranscript += event.results[i][0].transcript;
+             } else {
+                 interimTranscript += event.results[i][0].transcript;
+             }
+         }
 
-            // DO end process
-            /*
-            $btnMic.attr('class', 'off');
-            if (!finalTranscript) {
-                console.log('empty finalTranscript');
-                return false;
-            }*/
+         finalTranscript = capitalize(finalTranscript);
+         final_span.innerHTML = linebreak(finalTranscript);
+         interim_span.innerHTML = linebreak(interimTranscript);
 
-            if (window.getSelection) {
-                window.getSelection().removeAllRanges();
-                var range = document.createRange();
-                range.selectNode(document.getElementById('final-span'));
-                window.getSelection().addRange(range);
-            }
+         console.log('finalTranscript', finalTranscript);
+         console.log('interimTranscript', interimTranscript);
+         fireCommand(interimTranscript);
+     };
 
-        };
+     function fireCommand(string) {
+         if (string.endsWith('알람') || string.endsWith('알 람')) {
+             alert('알람');
+         } else if (string.endsWith('노래 켜') || string.endsWith('음악 켜')) {
+             audio.play();
+             $iconMusic.addClass('visible');
+         } else if (string.endsWith('노래 꺼') || string.endsWith('음악 꺼')) {
+             audio.pause();
+             $iconMusic.removeClass('visible');
+         } else if (string.endsWith('볼륨 업') || string.endsWith('볼륨업')) {
+             audio.volume += 0.2;
+         } else if (string.endsWith('볼륨 다운') || string.endsWith('볼륨다운')) {
+             audio.volume -= 0.2;
+         } else if (string.endsWith('스피치') || string.endsWith('말해줘') || string.endsWith('말 해 줘')) {
+             textToSpeech($('#final_span').text() || '전 음성 인식된 글자를 읽습니다.');
+         }
+     }
 
-        recognition.onresult = function(event) {
-            console.log('onresult', event);
+     recognition.onerror = function(event) {
+         console.log('onerror', event);
 
-            var interimTranscript = '';
-            if (typeof(event.results) == 'undefined') {
-                recognition.onend = null;
-                recognition.stop();
-                return;
-            }
+         if (event.error == 'no-speech') {
+             ignoreOnend = true;
+         } else if (event.error == 'audio-capture') {
+             ignoreOnend = true;
+         } else if (event.error == 'not-allowed') {
+             ignoreOnend = true;
+         }
 
-            for (var i = event.resultIndex; i < event.results.length; ++i) {
-                if (event.results[i].isFinal) {
-                    finalTranscript += event.results[i][0].transcript;
-                } else {
-                    interimTranscript += event.results[i][0].transcript;
-                }
-            }
+         //$btnMic.attr('class', 'off');
+     };
 
-            finalTranscript = capitalize(finalTranscript);
-            final_span.innerHTML = linebreak(finalTranscript);
-            interim_span.innerHTML = linebreak(interimTranscript);
+     var two_line = /\n\n/g;
+     var one_line = /\n/g;
+     var first_char = /\S/;
 
-            console.log('finalTranscript', finalTranscript);
-            console.log('interimTranscript', interimTranscript);
-            fireCommand(interimTranscript);
-        };
+     function linebreak(s) {
+         return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
+     }
 
-        function fireCommand(string) {
-            if (string.endsWith('알람') || string.endsWith('알 람')) {
-                alert('알람');
-            } else if (string.endsWith('노래 켜') || string.endsWith('음악 켜')) {
-                audio.play();
-                $iconMusic.addClass('visible');
-            } else if (string.endsWith('노래 꺼') || string.endsWith('음악 꺼')) {
-                audio.pause();
-                $iconMusic.removeClass('visible');
-            } else if (string.endsWith('볼륨 업') || string.endsWith('볼륨업')) {
-                audio.volume += 0.2;
-            } else if (string.endsWith('볼륨 다운') || string.endsWith('볼륨다운')) {
-                audio.volume -= 0.2;
-            } else if (string.endsWith('스피치') || string.endsWith('말해줘') || string.endsWith('말 해 줘')) {
-                textToSpeech($('#final_span').text() || '전 음성 인식된 글자를 읽습니다.');
-            }
-        }
+     function capitalize(s) {
+         return s.replace(first_char, function(m) {
+             return m.toUpperCase();
+         });
+     }
 
-        recognition.onerror = function(event) {
-            console.log('onerror', event);
+     function start(event) {
+         if (isRecognizing) {
+             recognition.stop();
+             return;
+         }
+         //recognition.lang = 'en-US';
+         recognition.lang = 'ko-KR';
+         recognition.start();
+         ignoreOnend = false;
 
-            if (event.error == 'no-speech') {
-                ignoreOnend = true;
-            } else if (event.error == 'audio-capture') {
-                ignoreOnend = true;
-            } else if (event.error == 'not-allowed') {
-                ignoreOnend = true;
-            }
+         finalTranscript = '';
+         final_span.innerHTML = '';
+         interim_span.innerHTML = '';
 
-            //$btnMic.attr('class', 'off');
-        };
+     }
 
-        var two_line = /\n\n/g;
-        var one_line = /\n/g;
-        var first_char = /\S/;
+     function textToSpeech(text) {
+         console.log('textToSpeech', arguments);
+         speechSynthesis.speak(new SpeechSynthesisUtterance(text));
+     }
 
-        function linebreak(s) {
-            return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
-        }
-
-        function capitalize(s) {
-            return s.replace(first_char, function(m) {
-                return m.toUpperCase();
-            });
-        }
-
-        function start(event) {
-            if (isRecognizing) {
-                recognition.stop();
-                return;
-            }
-            /*
-            if(final_span.innerHTML != '') {
-                save_data(document.getElementById('final').innerHTML);
-            }*/
-            //recognition.lang = 'en-US';
-            recognition.lang = 'ko-KR';
-            recognition.start();
-            ignoreOnend = false;
-
-            finalTranscript = '';
-            final_span.innerHTML = '';
-            interim_span.innerHTML = '';
-
-        }
-
-        /**
-         * textToSpeech
-         * 지원: 크롬, 사파리, 오페라, 엣지
-         */
-        function textToSpeech(text) {
-            console.log('textToSpeech', arguments);
-
-            // simple version
-            speechSynthesis.speak(new SpeechSynthesisUtterance(text));
-        }
-
-        function requestServer() {
-            $.ajax({
-                method: 'post',
-                url: 'https://www.google.com/speech-api/v2/recognize?output=json&lang=en-us&key=AIzaSyDX-LaY9JyYWxwAIb7BlPGZBKYUBtHzah4',
-                data: '/examples/speech-recognition/hello.wav',
-                contentType: 'audio/l16; rate=16000;', // 'audio/x-flac; rate=44100;',
-                success: function(data) {
-
-                },
-                error: function(xhr) {
-
-                }
-            });
-        }
-
-        $btnMic.click(start);
-        $('#btn-tts').click(function() {
-            textToSpeech($('#final_span').text() || '전 음성 인식된 글자를 읽습니다.');
-        });
-
-        function removeScript( id ) {
-            id = ''
-        }
+     function requestServer() {
+         $.ajax({
+             method: 'post',
+             url: 'https://www.google.com/speech-api/v2/recognize?output=json&lang=en-us&key=AIzaSyDX-LaY9JyYWxwAIb7BlPGZBKYUBtHzah4',
+             data: '/examples/speech-recognition/hello.wav',
+             contentType: 'audio/l16; rate=16000;', // 'audio/x-flac; rate=44100;',
+             success: function(data) { },
+             error: function(xhr) { }
+         });
+     }
 
 </script>
-
-
 </body>
 </html>

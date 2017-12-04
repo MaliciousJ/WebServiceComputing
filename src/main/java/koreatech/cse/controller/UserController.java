@@ -67,8 +67,7 @@ public class UserController {
         return "redirect:/user/list";
 
     }
-
-
+    
     @RequestMapping("/signin")
     public String signin() {
         return "signin";
