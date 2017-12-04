@@ -86,7 +86,7 @@ function fireCommand(string) {
     } else if (string.endsWith('녹음') || string.endsWith('녹 음')) {
         location.href = "/translate/register";
     } else if (string.endsWith('메모') || string.endsWith('메 모')) {
-        location.href = "/translate/register";
+        location.href = "/memo";
     } else if (string.endsWith('홈') || string.endsWith('메인')) {
         location.href = "/";
     }
