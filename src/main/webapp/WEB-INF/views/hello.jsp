@@ -41,12 +41,21 @@
                 </div>
             </div>
         </nav>
+
+        <div id="result">
+            <span class="final" id="final_span"></span>
+            <span class="interim" id="interim_span"></span>
+        </div>
+
+        <div class="fixed-action-btn" style="bottom: 600px; right: 500px;">
+            <a id="test" class="btn-floating btn-large waves-effect waves-light blue" onclick="start();"><i class="material-icons">mic</i></a>
+        </div>
+
         <div class="fixed-action-btn" style="bottom: 600px; right: 300px;">
             <button class="btn waves-effect waves-center" type="button" onClick="location.href='/memo'"; name="memo">MEMO
 
             </button>
         </div>
-
         <div class="fixed-action-btn" style="bottom: 600px; right: 70px;">
             <button class="btn waves-effect waves-center" type="button" onClick="location.href='/translate/register'" name="translation">TRANSLATION
 
@@ -67,6 +76,7 @@
     </div>
 </div>
 <script src="${pageContext.request.contextPath}/resources/js/firebaseAPI.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/googleAPI.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>

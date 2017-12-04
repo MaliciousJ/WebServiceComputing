@@ -81,6 +81,8 @@ function fireCommand(string) {
         audio.volume -= 0.2;
     } else if (string.endsWith('스피치') || string.endsWith('말해줘') || string.endsWith('말 해 줘')) {
         textToSpeech($('#final_span').text() || '전 음성 인식된 글자를 읽습니다.');
+    } else if (string.endsWith('번역') || string.endsWith('번 역')) {
+        location.href = "/translate/register";
     }
 }
 
