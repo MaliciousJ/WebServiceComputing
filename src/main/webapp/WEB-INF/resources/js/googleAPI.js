@@ -83,6 +83,12 @@ function fireCommand(string) {
         textToSpeech($('#final_span').text() || '전 음성 인식된 글자를 읽습니다.');
     } else if (string.endsWith('번역') || string.endsWith('번 역')) {
         location.href = "/translate/register";
+    } else if (string.endsWith('녹음') || string.endsWith('녹 음')) {
+        location.href = "/translate/register";
+    } else if (string.endsWith('메모') || string.endsWith('메 모')) {
+        location.href = "/translate/register";
+    } else if (string.endsWith('홈') || string.endsWith('메인')) {
+        location.href = "/";
     }
 }
 
