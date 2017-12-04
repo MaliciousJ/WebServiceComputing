@@ -42,6 +42,12 @@
         <textarea style="height:300px;" class="textarea" width="100%" rows="100" placeholder="새로운 메모를 입력해보세요^^"></textarea>
 
 
+        <div class="fixed-action-btn" style="bottom: 45px; right: 200px;">
+            <span class="final" id="final_span"></span>
+            <span class="interim" id="interim_span"></span>
+            <a id="test" class="btn-floating btn-large waves-effect waves-light blue" onclick="start();"><i class="material-icons">mic</i></a>
+        </div>
+
         <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
             <button class="btn waves-effect waves-center" type="submit" name="action"
                     onClick="location.href='/'; alertStr('Submit Done!') ">Submit
@@ -67,6 +73,7 @@
 
 <!--Import jQuery before materialize.js-->
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/firebaseAPI.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/googleAPI.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>

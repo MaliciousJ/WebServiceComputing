@@ -42,12 +42,13 @@
             </div>
         </nav>
 
-        <div id="result">
-            <span class="final" id="final_span"></span>
-            <span class="interim" id="interim_span"></span>
+        <div id="instruction" style="border: 1px solid; padding: 10px; margin: 20px">
+            메모, 녹음, 번역
         </div>
 
-        <div class="fixed-action-btn" style="bottom: 600px; right: 500px;">
+        <div class="fixed-action-btn" style="bottom: 750px; right: 950px;">
+            <span class="final" id="final_span"></span>
+            <span class="interim" id="interim_span"></span>
             <a id="test" class="btn-floating btn-large waves-effect waves-light blue" onclick="start();"><i class="material-icons">mic</i></a>
         </div>
 
