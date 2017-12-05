@@ -1,11 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<!DOCTYPE html>
 <html>
 <head>
   <title>Translate list</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-  <link href="/resources/css/main.css" rel="stylesheet" type="text/css" />
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <link href="${pageContext.request.contextPath}/resources/css/main.css" rel="stylesheet" type="text/css" />
+  <script src="${pageContext.request.contextPath}/resources/js/googleAPI.js"></script>
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <style>
@@ -22,6 +27,20 @@
 <body>
 <div class="row">
   <div class="col s3" style="padding:0; margin:0; overflow-y:auto; overflow-x:hidden; height:1080px; -ms-overflow-style: none;">
+
+    <div class="nav-wrapper">
+      <div class="col s12"><!--TODO 어째선지 버튼 오른쪽의 배경이 적용되지 않고 있음. 해결 필요-->
+        <a href="#!" class="breadcrumb"><span id="modifyDate"></span></a>
+        <button class="btn waves-effect waves-center" type="submit" name="action"
+                style="width: 100pt; height: 48pt;  right: 10px; font-size: 20pt; border: 0px solid #7a157a;
+                            -moz-box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
+                           -webkit-box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
+                           box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
+                          font-weight: bold; background-color: #ee6e73;"
+                onClick="location.href='/'">BACK
+        </button>
+      </div>
+    </div>
 
     <c:forEach var="u" items="${translate}">
       <!-- Grey navigation panel -->
@@ -41,4 +60,47 @@
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/googleAPI.js"></script>
 </body>
+
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Web Service Coputing Term Project</h5>
+        <img class="cse-logo" src="/resources/cse_logo.png" alt>
+        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">참가자</h5>
+        <ul>
+          <li>컴퓨터 공학부 2014136068 손지원</li>
+          <li>컴퓨터 공학부 진규환</li>
+          <li>컴퓨터 공학부 최준혁</li>
+        </ul>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">서비스</h5>
+        <ul>
+          <li><a class="grey-text text-lighten-3" href="/memo">메모</a></li>
+          <li><a class="grey-text text-lighten-3" href="/translate/register">녹음</a></li>
+          <li><a class="grey-text text-lighten-3" href="/translate/register">번역</a></li>
+        </ul>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">CONTACT</h5>
+        <ul>
+          <li>GitHub</li>
+          <li>Twitter</li>
+          <li>Facebook</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      © 2017 Copyright Text
+      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+    </div>
+  </div>
+</footer>
 </html>

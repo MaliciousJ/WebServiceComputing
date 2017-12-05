@@ -47,12 +47,11 @@
     <form:form modelAttribute="Translate">
       Source: <form:input path="source"/><br/>
       Target: <form:input path="target"/><br/>
-      Original: <form:input path="original" id="original"/><br/>
       Voice Recording:<br/>
 
 
     <div id="result">
-      <!--<form:label path="original"  class="final" id="final_span"/>-->
+      <form:input type="hidden" path="original" id="for_translate" class="final" value="null" />
       <span class="final" id="final_span"></span>
       <span class="interim" id="interim_span"></span>
     </div>
@@ -67,7 +66,7 @@
                                                                                                       Materialize.toast('SUBMIT', 1000);
                                                                                                       "><i class="material-icons">stop</i></a>
     </div>
-      <input type="submit" value="Register" id="trans_submit" onclick="save_data(document.getElementById('original').innerHTML);
+      <input type="submit" value="Register" id="trans_submit" onclick="save_data(document.getElementById('for.').innerHTML);
                                                                                                       Materialize.toast('SUBMIT', 1000);"/><i class="material-icons"></i>
 
     </form:form>
