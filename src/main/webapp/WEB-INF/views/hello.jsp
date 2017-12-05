@@ -52,14 +52,21 @@
             <a id="test" class="btn-floating btn-large waves-effect waves-light blue" onclick="start();"><i class="material-icons">mic</i></a>
         </div>
 
-        <div class="fixed-action-btn" style="bottom: 600px; right: 300px;">
-            <button class="btn waves-effect waves-center" type="button" onClick="location.href='/memo'"; name="memo">MEMO
-
+        <div class="fixed-action-btn" style="bottom: 600px; right: 400px;">
+            <button class="btn waves-effect waves-center" type="button" onClick="location.href='/memo'"; name="memo"
+                style="background-color: #4CAF50; border: none; height: 150px; width: 150px; border-radius: 12px;
+            color: white; padding: 10px 15px; text-align: center; text-decoration: none; display: inline-block; font-size: 25px;">
+                <img class="notepad-icon" src="/resources/notepad.png" alt>
+                MEMO
             </button>
         </div>
-        <div class="fixed-action-btn" style="bottom: 600px; right: 70px;">
-            <button class="btn waves-effect waves-center" type="button" onClick="location.href='/translate/register'" name="translation">TRANSLATION
 
+        <div class="fixed-action-btn" style="bottom: 600px; right: 200px;">
+            <button class="btn waves-effect waves-center" type="button" onClick="location.href='/translate/register'" name="translation"
+                    style="background-color: #4CAF50; border: none; height: 150px; width: 150px; border-radius: 12px;
+            color: white; padding: 5px 15px; text-align: center; text-decoration: none; display: inline-block; font-size: 23px;">
+                <img class="translation-icon" src="/resources/translation.png" width="100" height="100" alt>
+                번역
             </button>
         </div>
 
@@ -88,9 +95,9 @@
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">참가자</h5>
                 <ul>
-                    <li>컴퓨터 공학부 2014136068 손지원</li>
-                    <li>컴퓨터 공학부 진규환</li>
-                    <li>컴퓨터 공학부 최준혁</li>
+                    <li  class="grey-text text-lighten-3">컴퓨터 공학부 2014136068 손지원</li>
+                    <li  class="grey-text text-lighten-3">컴퓨터 공학부 진규환</li>
+                    <li  class="grey-text text-lighten-3">컴퓨터 공학부 최준혁</li>
                 </ul>
             </div>
             <div class="col l4 offset-l2 s12">
@@ -104,9 +111,9 @@
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">CONTACT</h5>
                 <ul>
-                    <li>GitHub</li>
-                    <li>Twitter</li>
-                    <li>Facebook</li>
+                    <li><a class="grey-text text-lighten-3" href="https://github.com/MaliciousJ/WebServiceComputingGitHub">GitHub</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://www.koreatech.ac.kr/kor.do">KOREATECH</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://cse.koreatech.ac.kr/">컴퓨터 공학부</a></li>
                 </ul>
             </div>
         </div>
