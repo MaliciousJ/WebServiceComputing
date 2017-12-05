@@ -71,6 +71,48 @@
     </div>
 </div>
 
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">Web Service Coputing Term Project</h5>
+                <img class="cse-logo" src="/resources/cse_logo.png" alt>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">참가자</h5>
+                <ul>
+                    <li>컴퓨터 공학부 2014136068 손지원</li>
+                    <li>컴퓨터 공학부 진규환</li>
+                    <li>컴퓨터 공학부 최준혁</li>
+                </ul>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">서비스</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="/memo">메모</a></li>
+                    <li><a class="grey-text text-lighten-3" href="/translate/register">녹음</a></li>
+                    <li><a class="grey-text text-lighten-3" href="/translate/register">번역</a></li>
+                </ul>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">CONTACT</h5>
+                <ul>
+                    <li>GitHub</li>
+                    <li>Twitter</li>
+                    <li>Facebook</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2017 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+    </div>
+</footer>
+
 <!--Import jQuery before materialize.js-->
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/firebaseAPI.js"></script>
