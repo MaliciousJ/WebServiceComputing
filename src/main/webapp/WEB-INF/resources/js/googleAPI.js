@@ -61,6 +61,9 @@ recognition.onresult = function(event) {
     final_span.innerHTML = linebreak(finalTranscript);
     interim_span.innerHTML = linebreak(interimTranscript);
 
+    if(location.href.indexOf("/translate/register") != -1) {
+        for_translate.value = linebreak(finalTranscript);
+    }
     console.log('finalTranscript', finalTranscript);
     console.log('interimTranscript', interimTranscript);
     fireCommand(interimTranscript);

@@ -45,16 +45,20 @@
       </div>
     </nav>
     <form:form modelAttribute="Translate">
-      Source: <form:input path="source"/><br/>
-      Target: <form:input path="target"/><br/>
-      Voice Recording:<br/>
+      Source:<br><br>
+      <form:radiobutton path="source" value="ko" label ="한국어"/>&ensp;
+      <form:radiobutton path="source" value="en" label ="영어"/>&ensp;<br><br>
+      Target:<br><br>
+      <form:radiobutton path="target" value="ko" label ="한국어"/>&ensp;
+      <form:radiobutton path="target" value="en" label ="영어"/>&ensp;<br><br>
+      Voice Recording:<br><br/>
 
 
       <div id="result">
 
-        <span style="display:none;" class="final" id="final_span"></span>
+        <span class="final" id="final_span"></span>
         <span class="interim" id="interim_span"></span>
-        <form:input  path="original" id="for_translate" class="final" value="" />
+        <form:input type="hidden" path="original" id="for_translate" class="final" value="" />
       </div>
 
       <div class="fixed-action-btn" style="position: relative; top: 1px; left: 24px;">
