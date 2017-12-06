@@ -4,6 +4,8 @@ import koreatech.cse.domain.Searchable;
 import koreatech.cse.domain.Translate;
 import koreatech.cse.repository.TranslateMapper;
 import koreatech.cse.service.TranslateService;
+import org.json.*;
+import org.json.simple.parser.JSONParser;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
@@ -44,7 +46,7 @@ public class TranslateController {
     public String register(@ModelAttribute Translate trans) {
 
         String source = trans.getSource(); // 번역할 언어
-        String target = trans.getTarget(); // 번역결과 언어
+        String target = trans.getTarget(); // 번역한 언어
 
         trans.setFavorite(false);
         trans.setDate(new java.util.Date());
@@ -141,10 +143,12 @@ public class TranslateController {
             System.out.println(response.toString());
             String responseStr = response.toString();
 
-            int start_idx = responseStr.indexOf("translatedText") + 17;
-            int end_idx = responseStr.indexOf("srcLangType") - 3;
-            responseStr = responseStr.substring(start_idx, end_idx);
-            return responseStr;
+            JSONParser jsonParser = new JSONParser();
+            JSONObject jsonObj = (JSONObject) jsonParser.parse(responseStr);
+            JSONObject obj = new JSONObject(jsonObj);
+            String resultJSON = jsonObj.getJSONObject("message").getString("result");
+
+            return resultJSON;
             // 번역결과 문장
         } catch (Exception e) {
             System.out.println(e);

@@ -43,7 +43,7 @@
         </nav>
 
         <div id="instruction" style="border: 1px solid; padding: 10px; margin: 20px">
-            메모, 녹음, 번역
+            키워드를 입력하세요 : '메모'  '녹음'  '번역'
         </div>
 
         <div class="fixed-action-btn" style="bottom: 750px; right: 950px;">
@@ -89,23 +89,15 @@
         <div class="row">
             <div class="col l6 s12">
                 <h5 class="white-text">Web Service Coputing Term Project</h5>
-                <img class="cse-logo" src="/resources/cse_logo.png" alt>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <img class="cse-logo" src="${pageContext.request.contextPath}/resources/cse_logo.png" alt>
+
             </div>
             <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">참가자</h5>
+                <h5 class="white-text">Team Member</h5>
                 <ul>
                     <li  class="grey-text text-lighten-3">컴퓨터 공학부 2014136068 손지원</li>
-                    <li  class="grey-text text-lighten-3">컴퓨터 공학부 진규환</li>
-                    <li  class="grey-text text-lighten-3">컴퓨터 공학부 최준혁</li>
-                </ul>
-            </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">서비스</h5>
-                <ul>
-                    <li><a class="grey-text text-lighten-3" href="/memo">메모</a></li>
-                    <li><a class="grey-text text-lighten-3" href="/translate/register">녹음</a></li>
-                    <li><a class="grey-text text-lighten-3" href="/translate/register">번역</a></li>
+                    <li  class="grey-text text-lighten-3">컴퓨터 공학부 2011136124 진규환</li>
+                    <li  class="grey-text text-lighten-3">컴퓨터 공학부 2013136134 최준혁</li>
                 </ul>
             </div>
             <div class="col l4 offset-l2 s12">
