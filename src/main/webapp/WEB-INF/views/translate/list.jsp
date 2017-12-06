@@ -50,6 +50,7 @@
           <span class="title"></span><p class='txt'>#날짜 : ${u.date}</p>
           <span class="title"></span><p class='txt'>#원문 : ${u.original}</p>
           <span class="title"></span><p class='txt'>#번역결과 : ${u.translated}</p>
+          <span class="title"></span><p class='txt'>#번역 횟수 : ${u.favorite}</p>
 
         </li>
       </ul>
