@@ -124,6 +124,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 <script>
+    if (document.location.protocol = 'http:'){
+        document.location,href = document.location.href.replace('http:', 'https:');
+
+    }
+
+</script>
+<script>
     firebase.initializeApp(config);
 
     auth = firebase.auth();
