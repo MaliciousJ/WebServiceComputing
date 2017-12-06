@@ -125,10 +125,10 @@ public class TranslateController {
             BufferedReader br;
 
             if(responseCode==200) { // 정상 호출
-                br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+                br = new BufferedReader(new InputStreamReader(con.getInputStream(),"utf-8"));
                 System.out.println("success 200");
             } else {  // 에러 발생
-                br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
+                br = new BufferedReader(new InputStreamReader(con.getErrorStream(),"utf-8"));
                 System.out.println("error 200");
             }
             String inputLine;
