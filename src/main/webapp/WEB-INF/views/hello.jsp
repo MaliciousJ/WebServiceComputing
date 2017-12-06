@@ -42,31 +42,32 @@
             </div>
         </nav>
 
-        <div id="instruction" style="border: 1px solid; padding: 10px; margin: 20px">
-            키워드를 입력하세요 : '메모'  '녹음'  '번역'
-            <div class="fixed-action-btn" style="bottom: 750px; right: 950px;">
-                <span class="final" id="final_span"></span>
-                <span class="interim" id="interim_span"></span>
-            </div>
+        <div class="fixed-action-btn" style="position: relative; top: 10px; left: 1px">
+            <a class="btn-floating btn-large waves-effect waves-light red" onClick="start();" style="border-radius: 12px"><i class="material-icons">headset_mic</i></a>
         </div>
 
+        <div id="instruction" style="position: relative; border: 1px solid; padding: 10px;margin-top: -40px; margin-left: 61px; margin-right: 10px;">
+            메모, 녹음, 번역
 
-        <a id="test" class="btn-floating btn-large waves-effect waves-light blue" onclick="start();"><i class="material-icons">mic</i></a>
-        <div class="fixed-action-btn" style="bottom: 600px; right: 400px;">
-            <button class="btn waves-effect waves-center" type="button" onClick="location.href='/memo'"; name="memo"
-                style="background-color: #4CAF50; border: none; height: 150px; width: 150px; border-radius: 12px;
+            <ul>[음성 인식]</ul>
+            <ul>아래에 인식된 음성이 출력됩니다.</ul>
+            <span class="final" id="final_span"></span>
+            <span class="interim" id="interim_span"></span>
+        </div>
+
+        <div class="fixed-action-btn" style="position: relative; top: 70px; left: 350px;">
+            <button class="btn waves-effect waves-center" type="button" onclick="location.href='/memo'"; name="memo"
+                    style="background-color: #4CAF50; border: none; height: 150px; width: 150px; border-radius: 12px;
             color: white; padding: 10px 15px; text-align: center; text-decoration: none; display: inline-block; font-size: 25px;">
-                <img class="notepad-icon" src="/resources/notepad.png" alt>
-                MEMO
+                <img class="notepad-icon" src="/resources/notepad.png" alt>MEMO
             </button>
         </div>
 
-        <div class="fixed-action-btn" style="bottom: 600px; right: 200px;">
+        <div class="fixed-action-btn" style="position: relative; bottom: 95px; left: 505px">
             <button class="btn waves-effect waves-center" type="button" onClick="location.href='/translate/register'" name="translation"
                     style="background-color: #4CAF50; border: none; height: 150px; width: 150px; border-radius: 12px;
             color: white; padding: 5px 15px; text-align: center; text-decoration: none; display: inline-block; font-size: 23px;">
-                <img class="translation-icon" src="/resources/translation.png" width="100" height="100" alt>
-                번역
+                <img class="translation-icon" src="/resources/translation.png" width="100" height="100" alt>번역
             </button>
         </div>
 
@@ -89,7 +90,7 @@
         <div class="row">
             <div class="col l6 s12">
                 <h5 class="white-text">Web Service Coputing Term Project</h5>
-                <img class="cse-logo" src="${pageContext.request.contextPath}/resources/cse_logo.png" alt>
+                <img class="cse-logo" src="${pageContext.request.contextPath}/resources/cse_logo.png">
 
             </div>
             <div class="col l4 offset-l2 s12">

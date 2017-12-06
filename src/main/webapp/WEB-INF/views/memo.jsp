@@ -42,17 +42,17 @@
         <textarea style="height:300px;" class="textarea" width="100%" rows="100" placeholder="새로운 메모를 입력해보세요^^"></textarea>
 
 
-        <div class="fixed-action-btn" style="bottom: 45px; right: 200px;">
-            <span class="final" id="final_span"></span>
-            <span class="interim" id="interim_span"></span>
-            <a id="test" class="btn-floating btn-large waves-effect waves-light blue" onclick="start();"><i class="material-icons">mic</i></a>
-        </div>
-
-        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-            <button class="btn waves-effect waves-center" type="submit" name="action"
+        <div class="fixed-action-btn" style="position: relative; top: 1px; left: 24px;">
+            <button class="btn waves-effect waves-center" type="submit" name="action" style="font-size: 20pt"
                     onClick="location.href='/'; alertStr('Submit Done!') ">Submit
                 <i class="material-icons center">check_box</i>
             </button>
+        </div>
+        <div class="fixed-action-btn" style="position: relative; bottom: 51px; left: 210px">
+            <span class="final" id="final_span"></span>
+            <span class="interim" id="interim_span"></span>
+            <a class="btn-floating btn-large waves-effect waves-light blue" style="height: 37px; width: 37px; border-radius: 3px" onclick="start();" >
+                <img class="translation-icon" src="/resources/headset.png" width="32" height="34"></a>
         </div>
     </div>
 
