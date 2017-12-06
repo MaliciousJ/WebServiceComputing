@@ -48,7 +48,7 @@ public class TranslateController {
         String source = trans.getSource(); // 번역할 언어
         String target = trans.getTarget(); // 번역한 언어
 
-        trans.setFavorite(false);
+        trans.setFavorite(1);
         trans.setDate(new java.util.Date());
         trans.setTranslated(translate_Naver(source, target, trans.getOriginal(), "NMT"));
 
@@ -56,33 +56,18 @@ public class TranslateController {
         return "redirect:/translate/list";
     }
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String list(Model model, @RequestParam(required=false) String source, @RequestParam(required=false) String target, @RequestParam(required=false) boolean favorite, @RequestParam(required=false) String order) {
+    public String list(Model model, @RequestParam(required=false) String source, @RequestParam(required=false) String target, @RequestParam(required=false) String order) {
         Searchable searchable = new Searchable();
         searchable.setSource(source);
         searchable.setTarget(target);
-        searchable.setFavorite(favorite);
-        searchable.setOrderParam(order);
+        searchable.setFavorite(1);
+        searchable.setOrderParam("favorite");
 
         List<Translate> translates = translateMapper.findByScript(searchable);
         System.out.println("translates = " + translates);
         model.addAttribute("translate", translates);
 
         return "/translate/list";
-
-    }
-    @RequestMapping(value = "/listForTest", method = RequestMethod.GET)
-    public String listForTest(Model model, @RequestParam(required=false) String source, @RequestParam(required=false) String target, @RequestParam(required=false) boolean favorite, @RequestParam(required=false) String order) {
-        Searchable searchable = new Searchable();
-        searchable.setSource(source);
-        searchable.setTarget(target);
-        searchable.setFavorite(favorite);
-        searchable.setOrderParam(order);
-
-        List<Translate> translates = translateMapper.findByScript(searchable);
-        System.out.println("translates = " + translates);
-        model.addAttribute("translate", translates);
-
-        return "/translate/listForTest";
 
     }
 
@@ -144,7 +129,7 @@ public class TranslateController {
             String responseStr = response.toString();
 
             JSONParser jsonParser = new JSONParser();
-            JSONObject jsonObj = (JSONObject) jsonParser.parse(responseStr);
+            JSONObject jsonObj = (JSONObject) jsonParser.parse(responseStr); // 에러 발생중
             JSONObject obj = new JSONObject(jsonObj);
             String resultJSON = jsonObj.getJSONObject("message").getString("result");
 

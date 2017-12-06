@@ -59,13 +59,6 @@
 
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/googleAPI.js"></script>
-<script>
-    if (document.location.protocol = 'http:'){
-        document.location,href = document.location.href.replace('http:', 'https:');
-
-    }
-
-</script>
 </body>
 
 

@@ -36,6 +36,11 @@ public interface TranslateMapper {
     @Delete("DELETE FROM TRANSLATE WHERE ID = #{id}")
     void delete(@Param("id") int id);
 
+    @Select("SELECT * FROM TRANSLATE WHERE ORIGINAL = #{original} AND TRANSLATED = #{translated}")
+    Translate searchByOrigTrans(Translate translate);
+
+    @Update("UPDATE TRANSLATE SET FAVORITE = #{favorite} WHERE ID = #{id}")
+    void updateCount(Translate translate);
 
     @SelectProvider(type = UserSqlProvider.class, method = "findAllByProvider")
     List<Translate> findByProvider(Searchable searchable);
@@ -45,7 +50,6 @@ public interface TranslateMapper {
             + "SELECT * FROM TRANSLATE"
             + "<if test='source != null'> WHERE SOURCE = #{source}</if>"
             + "<if test='source != null and target != null'> OR TARGET = #{target}</if>"
-            + "<if test='source != null and target != null and favorite != null'> OR FAVORITE = #{favorite}</if>"
             + "<if test='orderParam != null'>ORDER BY ${orderParam} DESC</if>"
             + "</script>")
     //@formatter on

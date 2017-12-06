@@ -9,7 +9,7 @@ public class Searchable {
     private String title;
     private String source;
     private String target;
-    private boolean favorite;
+    private int favorite;
 
     public String getName() {
         return name;
@@ -51,11 +51,11 @@ public class Searchable {
         this.title = title;
     }
 
-    public void setFavorite(boolean favorite) {
+    public void setFavorite(int favorite) {
         this.favorite = favorite;
     }
 
-    public boolean isFavorite() {
+    public int getFavorite() {
         return favorite;
     }
 

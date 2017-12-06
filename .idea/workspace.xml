@@ -7,10 +7,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="542aac1a-e5da-4a6b-9749-23967e20cde9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/koreatech/cse/controller/TranslateController.class" afterPath="$PROJECT_DIR$/target/classes/koreatech/cse/controller/TranslateController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/koreatech/cse/domain/Searchable.class" afterPath="$PROJECT_DIR$/target/classes/koreatech/cse/domain/Searchable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/koreatech/cse/domain/Translate.class" afterPath="$PROJECT_DIR$/target/classes/koreatech/cse/domain/Translate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/koreatech/cse/repository/TranslateMapper.class" afterPath="$PROJECT_DIR$/target/classes/koreatech/cse/repository/TranslateMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/koreatech/cse/service/TranslateService.class" afterPath="$PROJECT_DIR$/target/classes/koreatech/cse/service/TranslateService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/wsc-001/WEB-INF/classes/koreatech/cse/controller/TranslateController.class" afterPath="$PROJECT_DIR$/target/wsc-001/WEB-INF/classes/koreatech/cse/controller/TranslateController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/wsc-001/WEB-INF/classes/koreatech/cse/domain/Searchable.class" afterPath="$PROJECT_DIR$/target/wsc-001/WEB-INF/classes/koreatech/cse/domain/Searchable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/wsc-001/WEB-INF/classes/koreatech/cse/domain/Translate.class" afterPath="$PROJECT_DIR$/target/wsc-001/WEB-INF/classes/koreatech/cse/domain/Translate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/wsc-001/WEB-INF/classes/koreatech/cse/repository/TranslateMapper.class" afterPath="$PROJECT_DIR$/target/wsc-001/WEB-INF/classes/koreatech/cse/repository/TranslateMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/wsc-001/WEB-INF/classes/koreatech/cse/service/TranslateService.class" afterPath="$PROJECT_DIR$/target/wsc-001/WEB-INF/classes/koreatech/cse/service/TranslateService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_34.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_34.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/koreatech/cse/controller/TranslateController.java" afterPath="$PROJECT_DIR$/src/main/java/koreatech/cse/controller/TranslateController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/koreatech/cse/domain/Searchable.java" afterPath="$PROJECT_DIR$/src/main/java/koreatech/cse/domain/Searchable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/koreatech/cse/domain/Translate.java" afterPath="$PROJECT_DIR$/src/main/java/koreatech/cse/domain/Translate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/koreatech/cse/repository/TranslateMapper.java" afterPath="$PROJECT_DIR$/src/main/java/koreatech/cse/repository/TranslateMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/koreatech/cse/service/TranslateService.java" afterPath="$PROJECT_DIR$/src/main/java/koreatech/cse/service/TranslateService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/hello.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/hello.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memo.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memo.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/translate/list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/translate/list.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/translate/register.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/translate/register.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/wsc-001/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/wsc-001/META-INF/MANIFEST.MF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/wsc-001/WEB-INF/views/hello.jsp" afterPath="$PROJECT_DIR$/target/wsc-001/WEB-INF/views/hello.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/wsc-001/WEB-INF/views/memo.jsp" afterPath="$PROJECT_DIR$/target/wsc-001/WEB-INF/views/memo.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/wsc-001/WEB-INF/views/translate/register.jsp" afterPath="$PROJECT_DIR$/target/wsc-001/WEB-INF/views/translate/register.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,11 +56,9 @@
       <file leaf-file-name="hello.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/hello.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="131" column="9" lean-forward="false" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
-              <folding>
-                <marker date="1512524410758" expanded="true" signature="9502:9503" ph="..." />
-              </folding>
+            <state relative-caret-position="2394">
+              <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -48,8 +66,8 @@
       <file leaf-file-name="register.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/translate/register.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="132" selection-end-column="9" />
+            <state relative-caret-position="2375">
+              <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -58,41 +76,8 @@
       <file leaf-file-name="list.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/translate/list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="67" column="9" lean-forward="false" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="memo.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memo.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="119" column="9" lean-forward="false" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TranslateController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/koreatech/cse/controller/TranslateController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1512521347790" expanded="true" signature="1749:1931" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Translate.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/koreatech/cse/domain/Translate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+            <state relative-caret-position="152">
+              <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -101,8 +86,50 @@
       <file leaf-file-name="TranslateMapper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/koreatech/cse/repository/TranslateMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+            <state relative-caret-position="969">
+              <caret line="51" column="88" lean-forward="false" selection-start-line="51" selection-start-column="88" selection-end-line="51" selection-end-column="88" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Searchable.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/koreatech/cse/domain/Searchable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="912">
+              <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="memo.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memo.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1615">
+              <caret line="85" column="42" lean-forward="false" selection-start-line="85" selection-start-column="42" selection-end-line="85" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TranslateController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/koreatech/cse/controller/TranslateController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="131" column="86" lean-forward="false" selection-start-line="131" selection-start-column="86" selection-end-line="131" selection-end-column="86" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Translate.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/koreatech/cse/domain/Translate.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="893">
+              <caret line="78" column="31" lean-forward="false" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -111,8 +138,8 @@
       <file leaf-file-name="TranslateService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/koreatech/cse/service/TranslateService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="16" column="111" lean-forward="true" selection-start-line="16" selection-start-column="111" selection-end-line="16" selection-end-column="111" />
+            <state relative-caret-position="108">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -121,18 +148,8 @@
       <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1242">
-              <caret line="54" column="22" lean-forward="false" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3013">
-              <caret line="131" column="41" lean-forward="false" selection-start-line="131" selection-start-column="41" selection-end-line="131" selection-end-column="41" />
+            <state relative-caret-position="836">
+              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -150,12 +167,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sum</find>
-      <find>.textarea</find>
-      <find>save</find>
-      <find>ajax</find>
-      <find>bean</find>
-      <find>log</find>
       <find>#!</find>
       <find>head</find>
       <find>interim_span</find>
@@ -180,6 +191,12 @@
       <find>fire</find>
       <find>href</find>
       <find>logo</find>
+      <find>favorite</find>
+      <find>https</find>
+      <find>http:</find>
+      <find>org.json.jsonobject</find>
+      <find>here</find>
+      <find>obj</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -207,10 +224,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/common/security.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/js/memo.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/js/main.js" />
-        <option value="$PROJECT_DIR$/src/main/java/koreatech/cse/service/TranslateService.java" />
         <option value="$PROJECT_DIR$/../test2/src/main.java" />
         <option value="$PROJECT_DIR$/src/main/java/koreatech/cse/domain/Translate.java" />
-        <option value="$PROJECT_DIR$/src/main/java/koreatech/cse/repository/TranslateMapper.java" />
         <option value="$PROJECT_DIR$/src/main/resources/prod/config.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/dev/config.properties" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/signin.jsp" />
@@ -225,11 +240,13 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/js/googleAPI.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/koreatech/cse/controller/TranslateController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memo.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/translate/register.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/koreatech/cse/repository/TranslateMapper.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/translate/list.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/hello.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memo.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/koreatech/cse/service/TranslateService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/koreatech/cse/controller/TranslateController.java" />
       </list>
     </option>
   </component>
@@ -253,10 +270,11 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="width" value="976" />
-    <option name="height" value="1038" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="56" />
+    <option name="y" value="4" />
+    <option name="width" value="1459" />
+    <option name="height" value="829" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -274,37 +292,37 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="wsc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebServiceComputing" type="462c0819:PsiDirectoryNode" />
+              <item name="git" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wsc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebServiceComputing" type="462c0819:PsiDirectoryNode" />
+              <item name="git" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wsc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebServiceComputing" type="462c0819:PsiDirectoryNode" />
+              <item name="git" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wsc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebServiceComputing" type="462c0819:PsiDirectoryNode" />
+              <item name="git" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wsc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebServiceComputing" type="462c0819:PsiDirectoryNode" />
+              <item name="git" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -312,7 +330,7 @@
             </path>
             <path>
               <item name="wsc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebServiceComputing" type="462c0819:PsiDirectoryNode" />
+              <item name="git" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -321,7 +339,7 @@
             </path>
             <path>
               <item name="wsc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebServiceComputing" type="462c0819:PsiDirectoryNode" />
+              <item name="git" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -330,7 +348,7 @@
             </path>
             <path>
               <item name="wsc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebServiceComputing" type="462c0819:PsiDirectoryNode" />
+              <item name="git" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -339,17 +357,7 @@
             </path>
             <path>
               <item name="wsc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebServiceComputing" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="cse" type="462c0819:PsiDirectoryNode" />
-              <item name="repository" type="462c0819:PsiDirectoryNode" />
-              <item name="provider" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wsc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebServiceComputing" type="462c0819:PsiDirectoryNode" />
+              <item name="git" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -358,56 +366,37 @@
             </path>
             <path>
               <item name="wsc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebServiceComputing" type="462c0819:PsiDirectoryNode" />
+              <item name="git" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wsc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebServiceComputing" type="462c0819:PsiDirectoryNode" />
+              <item name="git" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="prod" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wsc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebServiceComputing" type="462c0819:PsiDirectoryNode" />
+              <item name="git" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wsc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebServiceComputing" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wsc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebServiceComputing" type="462c0819:PsiDirectoryNode" />
+              <item name="git" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wsc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebServiceComputing" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wsc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebServiceComputing" type="462c0819:PsiDirectoryNode" />
+              <item name="git" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
@@ -416,7 +405,7 @@
             </path>
             <path>
               <item name="wsc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="WebServiceComputing" type="462c0819:PsiDirectoryNode" />
+              <item name="git" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
@@ -812,6 +801,7 @@
       <workItem from="1512519077452" duration="1191000" />
       <workItem from="1512520576322" duration="2181000" />
       <workItem from="1512522998533" duration="963000" />
+      <workItem from="1512528516463" duration="664000" />
     </task>
     <task id="LOCAL-00001" summary="jsp 중복코드 및 헤더파일 정리">
       <created>1512389020651</created>
@@ -824,7 +814,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98529000" />
+    <option name="totallyTimeSpent" value="100531000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -836,7 +826,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <frame x="56" y="4" width="1459" height="829" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2978972" sideWeight="0.5075676" order="7" side_tool="true" content_ui="tabs" />
@@ -852,16 +843,16 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3986135" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2514029" sideWeight="0.49351352" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.49351352" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28507295" sideWeight="0.49243245" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28304598" sideWeight="0.49243245" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943925" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1984375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19799857" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -931,13 +922,7 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/js/memo.js" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8b9595f4-8328-4e21-aa32-b364e0174921/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8b9595f4-8328-4e21-aa32-b364e0174921/console.sql" />
     <entry file="file://$PROJECT_DIR$/src/main/java/koreatech/cse/repository/BookMapper.java" />
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -970,14 +955,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
           <caret line="22" column="17" lean-forward="false" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/koreatech/cse/domain/Searchable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="8" column="25" lean-forward="false" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1047,7 +1024,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1074,13 +1050,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a0e1eb84-2e08-4502-bfe0-3cbcc358aebb/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a0e1eb84-2e08-4502-bfe0-3cbcc358aebb/console.sql" />
     <entry file="file://$PROJECT_DIR$/src/main/java/koreatech/cse/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -1125,22 +1095,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/resources/js/googleAPI.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1978">
+        <state relative-caret-position="1634">
           <caret line="86" column="5" lean-forward="false" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1242">
-          <caret line="54" column="22" lean-forward="false" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+        <state relative-caret-position="836">
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1156,70 +1124,75 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/translate/listForTest.jsp" />
     <entry file="file://$PROJECT_DIR$/src/main/java/koreatech/cse/domain/Translate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="21" column="18" lean-forward="true" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+        <state relative-caret-position="893">
+          <caret line="78" column="31" lean-forward="false" selection-start-line="78" selection-start-column="31" selection-end-line="78" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/koreatech/cse/repository/TranslateMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+        <state relative-caret-position="969">
+          <caret line="51" column="88" lean-forward="false" selection-start-line="51" selection-start-column="88" selection-end-line="51" selection-end-column="88" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/koreatech/cse/service/TranslateService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/koreatech/cse/domain/Searchable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="16" column="111" lean-forward="true" selection-start-line="16" selection-start-column="111" selection-end-line="16" selection-end-column="111" />
+        <state relative-caret-position="912">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/koreatech/cse/controller/TranslateController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memo.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="49" column="0" lean-forward="true" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1512521347790" expanded="true" signature="1749:1931" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/translate/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="132" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/translate/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="67" column="9" lean-forward="false" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+        <state relative-caret-position="1615">
+          <caret line="85" column="42" lean-forward="false" selection-start-line="85" selection-start-column="42" selection-end-line="85" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/hello.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="131" column="9" lean-forward="false" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
-          <folding>
-            <marker date="1512524410758" expanded="true" signature="9502:9503" ph="..." />
-          </folding>
+        <state relative-caret-position="2394">
+          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/memo.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/translate/register.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="119" column="9" lean-forward="false" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
+        <state relative-caret-position="2375">
+          <caret line="129" column="0" lean-forward="false" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/translate/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="38" lean-forward="false" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/koreatech/cse/service/TranslateService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/koreatech/cse/controller/TranslateController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="131" column="86" lean-forward="false" selection-start-line="131" selection-start-column="86" selection-end-line="131" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
