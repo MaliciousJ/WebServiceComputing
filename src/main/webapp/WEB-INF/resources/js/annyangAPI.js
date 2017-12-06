@@ -18,10 +18,7 @@ function start2() {
     var $result = $('#result');
     var $iconMusic = $('#icon-music');
 
-    annyang.start();
-    annyang.pause();
     var recognition2 = annyang.getSpeechRecognizer();
-    //var recognition2 = annyang.getSpeechRecognizer();
     var finalTranscript2 = '';
 
 

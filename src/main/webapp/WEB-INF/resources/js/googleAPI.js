@@ -43,11 +43,11 @@ recognition.onresult = function(event) {
     console.log('onresult', event);
 
     var interimTranscript = '';
-    if (typeof(event.results) == 'undefined') {
-        recognition.onend = null;
-        recognition.stop();
-        return;
-    }
+    if ('undefined' == typeof(event.results)) {
+    recognition.onend = null;
+    recognition.stop();
+    return;
+}
 
     for (var i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
@@ -125,12 +125,6 @@ function start(event) {
         recognition.stop();
         return;
     }
-    /*
-    if(final_span.innerHTML != '') {
-        save_data(document.getElementById('final').innerHTML);
-    }*/
-    //recognition.lang = 'en-US';
-    recognition.lang = 'ko-KR';
     recognition.start();
     ignoreOnend = false;
 
