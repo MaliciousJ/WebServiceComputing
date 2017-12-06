@@ -45,9 +45,13 @@
       </div>
     </nav>
     <form:form modelAttribute="Translate">
-      Source: <form:input path="source"/><br/>
-      Target: <form:input path="target"/><br/>
-      Voice Recording:<br/>
+      Source:<br><br>
+      <form:radiobutton path="source" value="ko" label ="한국어"/>&ensp;
+      <form:radiobutton path="source" value="en" label ="영어"/>&ensp;<br><br>
+      Target:<br><br>
+      <form:radiobutton path="target" value="ko" label ="한국어"/>&ensp;
+      <form:radiobutton path="target" value="en" label ="영어"/>&ensp;<br><br>
+      Voice Recording:<br><br/>
 
 
       <div id="result">
@@ -57,17 +61,17 @@
         <form:input type="hidden" path="original" id="for_translate" class="final" value="" />
       </div>
 
-      <div class="fixed-action-btn" style="bottom: 35px; right: 230px;">
-        <a id="test" class="btn-floating btn-large waves-effect waves-light blue" onclick="start();"><i class="material-icons">mic</i></a>
+      <div class="fixed-action-btn" style="position: relative; top: 1px; left: 24px;">
+        <button class="btn waves-effect waves-center" type="submit" value="Register" id="trans_submit" style="font-size: 20pt"
+                onClick="alertStr('번역 완료!') ">Register
+          <i class="material-icons center">check_box</i>
+        </button>
+      </div>
+      <div class="fixed-action-btn" style="position: relative; bottom: 51px; left: 236px">
+        <a class="btn-floating btn-large waves-effect waves-light blue" style="height: 37px; width: 37px; padding: 2px; border-radius: 3px" onclick="start();" >
+          <img class="translation-icon" src="/resources/mic.png" width="32" height="34"></a>
       </div>
 
-      <div class="fixed-action-btn" style="bottom: 35px; right: 170px;">
-
-        <a id="btn-mic2" class="btn-floating btn-large waves-effect waves-light red" onclick="save_data(document.getElementById('final_span').innerHTML);
-                                                                                                      Materialize.toast('SUBMIT', 1000);
-                                                                                                      "><i class="material-icons">stop</i></a>
-      </div>
-      <input type="submit" value="Register" id="trans_submit" onclick="alertStr('번역 완료!')"/><i class="material-icons"></i>
 
     </form:form>
   </div>
