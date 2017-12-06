@@ -49,8 +49,9 @@
             </button>
         </div>
         <div class="fixed-action-btn" style="position: relative; bottom: 51px; left: 210px">
-            <span class="final" id="final_span"></span>
+            <span style="display:none;" class="final" id="final_span"></span>
             <span class="interim" id="interim_span"></span>
+            <form:input  path="original" id="for_translate" class="final" value="" />
             <a class="btn-floating btn-large waves-effect waves-light blue" style="height: 37px; width: 37px; border-radius: 3px" onclick="start();" >
                 <img class="translation-icon" src="/resources/headset.png" width="32" height="34"></a>
         </div>

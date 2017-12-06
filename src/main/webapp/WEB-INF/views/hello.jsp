@@ -53,6 +53,7 @@
             <ul>아래에 인식된 음성이 출력됩니다.</ul>
             <span class="final" id="final_span"></span>
             <span class="interim" id="interim_span"></span>
+            <form:input  path="original" id="for_translate" class="final" value="" />
         </div>
 
         <div class="fixed-action-btn" style="position: relative; top: 70px; left: 350px;">
