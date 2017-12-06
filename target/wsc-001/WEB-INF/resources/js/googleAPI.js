@@ -170,3 +170,9 @@ function requestServer() {
 function removeScript( id ) {
     id = ''
 }
+
+
+function alertStr(msg) {
+    alert(msg);
+    save_data( $(".textarea").val() );
+}

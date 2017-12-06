@@ -19,7 +19,7 @@ public class Translate implements Serializable {
     private String original; // Original
     private String translated; // Translated
     private int userid;
-    private boolean favorite;
+    private int favorite;
     private String date;
 
 
@@ -72,11 +72,11 @@ public class Translate implements Serializable {
     }
 
 
-    public boolean isFavorite() {
+    public int getFavorite() {
         return favorite;
     }
 
-    public void setFavorite(boolean favorite) {
+    public void setFavorite(int favorite) {
         this.favorite = favorite;
     }
 

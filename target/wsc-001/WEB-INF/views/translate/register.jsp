@@ -50,24 +50,24 @@
       Voice Recording:<br/>
 
 
-    <div id="result">
-      <form:input type="hidden" path="original" id="for_translate" class="final" value="null" />
-      <span class="final" id="final_span"></span>
-      <span class="interim" id="interim_span"></span>
-    </div>
+      <div id="result">
 
-    <div class="fixed-action-btn" style="bottom: 35px; right: 230px;">
-      <a id="test" class="btn-floating btn-large waves-effect waves-light blue" onclick="start();"><i class="material-icons">mic</i></a>
-    </div>
+        <span style="display:none;" class="final" id="final_span"></span>
+        <span class="interim" id="interim_span"></span>
+        <form:input  path="original" id="for_translate" class="final" value="" />
+      </div>
 
-    <div class="fixed-action-btn" style="bottom: 35px; right: 170px;">
+      <div class="fixed-action-btn" style="bottom: 35px; right: 230px;">
+        <a id="test" class="btn-floating btn-large waves-effect waves-light blue" onclick="start();"><i class="material-icons">mic</i></a>
+      </div>
 
-      <a id="btn-mic2" class="btn-floating btn-large waves-effect waves-light red" onclick="save_data(document.getElementById('final_span').innerHTML);
+      <div class="fixed-action-btn" style="bottom: 35px; right: 170px;">
+
+        <a id="btn-mic2" class="btn-floating btn-large waves-effect waves-light red" onclick="save_data(document.getElementById('final_span').innerHTML);
                                                                                                       Materialize.toast('SUBMIT', 1000);
                                                                                                       "><i class="material-icons">stop</i></a>
-    </div>
-      <input type="submit" value="Register" id="trans_submit" onclick="save_data(document.getElementById('for.').innerHTML);
-                                                                                                      Materialize.toast('SUBMIT', 1000);"/><i class="material-icons"></i>
+      </div>
+      <input type="submit" value="Register" id="trans_submit" onclick="alertStr('번역 완료!')"/><i class="material-icons"></i>
 
     </form:form>
   </div>

@@ -44,14 +44,14 @@
 
         <div id="instruction" style="border: 1px solid; padding: 10px; margin: 20px">
             키워드를 입력하세요 : '메모'  '녹음'  '번역'
+            <div class="fixed-action-btn" style="bottom: 750px; right: 950px;">
+                <span class="final" id="final_span"></span>
+                <span class="interim" id="interim_span"></span>
+            </div>
         </div>
 
-        <div class="fixed-action-btn" style="bottom: 750px; right: 950px;">
-            <span class="final" id="final_span"></span>
-            <span class="interim" id="interim_span"></span>
-            <a id="test" class="btn-floating btn-large waves-effect waves-light blue" onclick="start();"><i class="material-icons">mic</i></a>
-        </div>
 
+        <a id="test" class="btn-floating btn-large waves-effect waves-light blue" onclick="start();"><i class="material-icons">mic</i></a>
         <div class="fixed-action-btn" style="bottom: 600px; right: 400px;">
             <button class="btn waves-effect waves-center" type="button" onClick="location.href='/memo'"; name="memo"
                 style="background-color: #4CAF50; border: none; height: 150px; width: 150px; border-radius: 12px;

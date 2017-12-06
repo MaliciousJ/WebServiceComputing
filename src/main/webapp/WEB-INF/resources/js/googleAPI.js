@@ -60,7 +60,6 @@ recognition.onresult = function(event) {
     finalTranscript = capitalize(finalTranscript);
     final_span.innerHTML = linebreak(finalTranscript);
     interim_span.innerHTML = linebreak(interimTranscript);
-    document.getElementById("for_translate").value = linebreak(finalTranscript);
 
     console.log('finalTranscript', finalTranscript);
     console.log('interimTranscript', interimTranscript);
@@ -169,4 +168,10 @@ function requestServer() {
 
 function removeScript( id ) {
     id = ''
+}
+
+
+function alertStr(msg) {
+    alert(msg);
+    save_data( $(".textarea").val() );
 }
