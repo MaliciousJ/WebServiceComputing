@@ -5,7 +5,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Translate list</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
   <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
