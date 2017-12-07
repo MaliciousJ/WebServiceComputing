@@ -33,7 +33,7 @@
 <div class="row">
   <div class="col s3" style="padding:0; margin:0; overflow-y:auto; overflow-x:hidden; height:540px; -ms-overflow-style: none;">
     <!-- Grey navigation panel -->
-    <ul class="collection" id="fb_collection"  style="padding:0; margin:0;"></ul>
+    <ul class="collection" id="fb_collection"  style="padding:0; margin:0;" >메모</ul>
   </div>
 
   <div class="col s6" style="padding:0; margin:0; max-height:540px;">
@@ -42,14 +42,14 @@
       <div class="nav-wrapper"STYLE="background-color:#191970;">
         <div class="col s12">
           <a href="#!" class="breadcrumb"><span id="modifyDate"></span></a>
-          <button class="btn waves-effect waves-center" type="submit" name="action"
-                  style="width: 100pt; height: 48pt;  right: 10px; font-size: 20pt; border: 0px solid #7a157a;
+            <button class="btn waves-effect waves-center" type="submit" name="action"
+                    style="width: 140pt; height: 44pt;  right: 10px; font-size: 20pt; border: 0px solid #7a157a;
                             -moz-box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
                            -webkit-box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
                            box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
-                          font-weight: bold; background-color: #191970;"
-                  onClick="location.href='/'">BACK
-          </button>
+                          font-weight: bold; background-color:#191970;"
+                    onClick="location.href='/'";>◀  BACK
+            </button>
           <img class="WCT-logo" src="/resources/cse_logo2.png" height="70" align="right" alt/>
         </div>
       </div>
@@ -129,7 +129,7 @@
       <div class="col l4 offset-l2 s12">
         <h5 class="white-text">CONTACT</h5>
         <ul>
-          <li><a class="white-text text-lighten-3" href="https://github.com/MaliciousJ/WebServiceComputingGitHub">GitHub</a></li>
+          <li><a class="white-text text-lighten-3" href="https://github.com/MaliciousJ/WebServiceComputing">GitHub</a></li>
           <li><a class="white-text text-lighten-3" href="https://www.koreatech.ac.kr/kor.do">KOREATECH</a></li>
           <li><a class="white-text text-lighten-3" href="https://cse.koreatech.ac.kr/">컴퓨터 공학부</a></li>
         </ul>
