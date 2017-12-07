@@ -18,7 +18,10 @@ public class TranslateService {
         if(trans.getOriginal() == null || trans.getSource()==  null || trans.getTranslated()==  null || trans.getTarget()==  null)
             return false;
 
-        Translate result = translateMapper.searchByOrigTrans(trans);
+
+        Translate result = translateMapper.searchByOrigTrans(
+                trans.getOriginal().replaceAll(" ", ""),
+                trans.getTranslated().replaceAll(" ", "")   );
 
         if(result != null)
         {
