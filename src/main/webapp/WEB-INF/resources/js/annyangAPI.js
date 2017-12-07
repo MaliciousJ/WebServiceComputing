@@ -12,11 +12,9 @@ function start2() {
 
     var isRecognizing = false;
     var ignoreOnend = false;
-    var audio = document.getElementById('audio');
 
     var $btnMic = $('#btn-mic');
     var $result = $('#result');
-    var $iconMusic = $('#icon-music');
 
     var recognition2 = annyang.getSpeechRecognizer();
     var finalTranscript2 = '';

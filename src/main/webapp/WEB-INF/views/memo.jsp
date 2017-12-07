@@ -49,7 +49,7 @@
             </div>
         </nav>
 
-        <textarea style="height:300px;" class="textarea" width="100%" rows="100" placeholder="새로운 메모를 입력해보세요^^"></textarea>
+        <textarea style="height:300px;" class="textarea" id="final_span" width="100%" rows="100" placeholder="새로운 메모를 입력해보세요^^"></textarea>
 
 
         <div class="fixed-action-btn" style="position: relative; top: 1px; left: 24px;">
@@ -59,8 +59,8 @@
             </button>
         </div>
         <div class="fixed-action-btn" style="position: relative; bottom: 51px; left: 210px">
-            <span class="final" id="final_span"></span>
-            <span class="interim" id="interim_span"></span>
+
+            <span class="interim" id="interim_span" style="display:none;"></span>
             <a class="btn-floating btn-large waves-effect waves-light blue" style="height: 37px; width: 37px; padding: 3px; border-radius: 3px" onclick="start();" >
                 <img class="translation-icon" src="/resources/mic.png" width="32" height="32"></a>
         </div>
@@ -134,6 +134,7 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+<audio id="audio" src="/resources/1.mp3"></audio>
 <script>
     var auth, database, userInfo, selectedKey;
     // Initialize Firebase
@@ -247,10 +248,6 @@
         selectedKey=null;
     }
 
-    function alertStr(msg) {
-        alert(msg);
-        save_data( $(".textarea").val() );
-    }
 
 </script>
 

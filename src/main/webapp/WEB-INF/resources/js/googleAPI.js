@@ -3,6 +3,9 @@ var recognition = new webkitSpeechRecognition();
 var isRecognizing = false;
 var ignoreOnend = false;
 var finalTranscript = '';
+var musicCnt = 0;
+var maxMusic = 3;
+var announce = false;
 recognition.continuous = true;
 recognition.interimResults = true;
 
@@ -68,21 +71,52 @@ recognition.onresult = function(event) {
     console.log('interimTranscript', interimTranscript);
     fireCommand(interimTranscript);
 };
+function moveMusic(txt) {
+    var audio = document.getElementById('audio');
+    if(txt == 'next')
+        musicCnt = (musicCnt + 1) % maxMusic;
+    else{
+        musicCnt = (musicCnt - 1 + maxMusic) % maxMusic;
+    }
+
+    if(musicCnt == 0)
+        audio.setAttribute('src', '/resources/1.mp3');
+    else if(musicCnt == 1)
+        audio.setAttribute('src', '/resources/2.mp3');
+    else if(musicCnt == 2){
+            audio.setAttribute('src', '/resources/3.mp3');
+    }
+    audio.play();
+}
 
 function fireCommand(string) {
-    if (string.endsWith('알람') || string.endsWith('알 람')) {
-        alert('알람');
+    if (string.endsWith('몇시야') || string.endsWith('몇 시야')|| string.endsWith('몇시 야')) {
+        var d = new Date();
+        if(announce == false) {
+            textToSpeech('지금 시각은' + d.getHours() + '시' + d.getMinutes() + '분 입니다');
+            announce = true;
+        } else
+            announce = false;
+    } else if (string.endsWith('저장') || string.endsWith('저 장')) {
+        alertStr('Submit Done!');
+        location.href = "/";
     } else if (string.endsWith('노래 켜') || string.endsWith('음악 켜')) {
+        var audio = document.getElementById('audio');
         audio.play();
-        $iconMusic.addClass('visible');
     } else if (string.endsWith('노래 꺼') || string.endsWith('음악 꺼')) {
+        var audio = document.getElementById('audio');
         audio.pause();
-        $iconMusic.removeClass('visible');
     } else if (string.endsWith('볼륨 업') || string.endsWith('볼륨업')) {
-        audio.volume += 0.2;
+        var audio = document.getElementById('audio');
+        audio.volume += 0.3;
     } else if (string.endsWith('볼륨 다운') || string.endsWith('볼륨다운')) {
-        audio.volume -= 0.2;
-    } else if (string.endsWith('스피치') || string.endsWith('말해줘') || string.endsWith('말 해 줘')) {
+        var audio = document.getElementById('audio');
+        audio.volume -= 0.3;
+    } else if (string.endsWith('다음')|| string.endsWith('다 음')) {
+        moveMusic('next');
+    }  else if (string.endsWith('이전')|| string.endsWith('이 전')) {
+        moveMusic('prev');
+    } else if (string.endsWith('스피치') || string.endsWith('말해줘') || string.endsWith('말 해 줘')|| string.endsWith('말해 줘')|| string.endsWith('말 해줘')) {
         textToSpeech($('#final_span').text() || '전 음성 인식된 글자를 읽습니다.');
     } else if (string.endsWith('번역') || string.endsWith('번 역')) {
         location.href = "/translate/register";
