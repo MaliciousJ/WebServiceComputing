@@ -27,7 +27,7 @@
 <div class="row">
     <div class="col s3" style="padding:0; margin:0; overflow-y:auto; overflow-x:hidden; height:540px; -ms-overflow-style: none;">
         <!-- Grey navigation panel -->
-        <ul class="collection"  style="padding:0; margin:0;"></ul>
+        <ul class="collection" id="fb_collection" style="padding:0; margin:0;"></ul>
     </div>
 
     <div class="col s6" style="padding:0; margin:0; max-height:540px;">
@@ -65,10 +65,10 @@
         </div>
     </div>
 
-    <div>
-        <c:forEach var="u" items="${translate}">
+    <div class="col s3" style="padding:0; margin:0; overflow-y:auto; overflow-x:hidden; -ms-overflow-style: none;">
+    <c:forEach var="u" items="${translate}">
         <!-- Grey navigation panel -->
-        <ul class="db_collection"  style="padding:0; margin:0;">
+        <ul class="collection" id="db_collection"  style="padding:0; margin:0;">
             <li id='"+key+"' class="collection-item avatar" onclick="fn_get_data_one(this.id);" >
                 <i class="material-icons circle red">a</i>
                 <span class="title"></span><p class='txt'>#날짜 : ${u.date}</p>
@@ -198,7 +198,7 @@
             "</p>" +
             "<a href=\"#!\" onClick=\"fn_delete_data('"+key+"')\"class=\"secondary-content\"><i class=\"material-icons\">clear</i></a>"+
             "</li>";
-        $(".collection").append(html);
+        $("#fb_collection").append(html);
     }
 
     function fn_get_data_one(key){
