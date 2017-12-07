@@ -24,7 +24,7 @@
     <div class="col s9" style="padding:0; margin:0; max-height:540px;">
         <!-- Teal page content  -->
         <nav>
-            <div class="nav-wrapper"STYLE="background-color:#C8E2F1;">
+            <div class="nav-wrapper"STYLE="background-color:#191970;">
                 <div class="col s12">
                     <a href="#!" class="breadcrumb"><span id="modifyDate"></span></a>
                     <button class="btn waves-effect waves-center" type="submit" name="action"
@@ -32,9 +32,9 @@
                             -moz-box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
                            -webkit-box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
                            box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
-                          font-weight: bold; background-color:#C8E2F1;" onClick="location.href='/'";>BACK
+                          font-weight: bold; background-color:#191970;" onClick="location.href='/'";>BACK
                     </button>
-                    <img class="WCT-logo" src="/resources/cse_logo.png" height="70" align="right" alt/>
+                    <img class="WCT-logo" src="/resources/cse_logo2.png" height="70" align="right" alt/>
                 </div>
             </div>
         </nav>
@@ -72,27 +72,26 @@
     </div>
 </div>
 
-<footer class="page-footer"STYLE="background-color:#C8E2F1;">
+<footer class="page-footer"STYLE="background-color:#191970;">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
-                <h5 class="white-text">Web Service Coputing Term Project</h5>
-                <img class="cse-logo" src="/resources/cse_logo.png" alt>
+                <img class="cse-logo" src="${pageContext.request.contextPath}/resources/Team_Text.png">
             </div>
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Team Member</h5>
                 <ul>
-                    <li  class="black-text text-lighten-3">컴퓨터 공학부 2014136068 손지원</li>
-                    <li  class="black-text text-lighten-3">컴퓨터 공학부 2011136124 진규환</li>
-                    <li  class="black-text text-lighten-3">컴퓨터 공학부 2013136134 최준혁</li>
+                    <li  class="white-text text-lighten-3">컴퓨터 공학부 2014136068 손지원</li>
+                    <li  class="white-text text-lighten-3">컴퓨터 공학부 2011136124 진규환</li>
+                    <li  class="white-text text-lighten-3">컴퓨터 공학부 2013136134 최준혁</li>
                 </ul>
             </div>
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">CONTACT</h5>
                 <ul>
-                    <li><a class="black-text text-lighten-3" href="https://github.com/MaliciousJ/WebServiceComputingGitHub">GitHub</a></li>
-                    <li><a class="black-text text-lighten-3" href="https://www.koreatech.ac.kr/kor.do">KOREATECH</a></li>
-                    <li><a class="black-text text-lighten-3" href="https://cse.koreatech.ac.kr/">컴퓨터 공학부</a></li>
+                    <li><a class="white-text text-lighten-3" href="https://github.com/MaliciousJ/WebServiceComputingGitHub">GitHub</a></li>
+                    <li><a class="white-text text-lighten-3" href="https://www.koreatech.ac.kr/kor.do">KOREATECH</a></li>
+                    <li><a class="white-text text-lighten-3" href="https://cse.koreatech.ac.kr/">컴퓨터 공학부</a></li>
                 </ul>
             </div>
         </div>
@@ -100,7 +99,6 @@
     <div class="footer-copyright">
         <div class="container">
             © 2017 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
         </div>
     </div>
 </footer>
