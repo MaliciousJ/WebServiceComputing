@@ -16,7 +16,6 @@
         .collection { cursor: pointer;}
     </style>
 </head>
-
 <body>
 <div class="row">
     <div class="col s3" style="padding:0; margin:0; overflow-y:auto; overflow-x:hidden; height:540px; -ms-overflow-style: none;">
@@ -27,18 +26,21 @@
     <div class="col s9" style="padding:0; margin:0; max-height:540px;">
         <!-- Teal page content  -->
         <nav>
-            <div class="nav-wrapper">
+            <div class="nav-wrapper" STYLE="background-color:#C8E2F1;">
                 <div class="col s12">
-                    <a href="#!" class="breadcrumb"><span id="modifyDate"></span></a>
+                    <a href="#!" class="breadcrumb" >
+                        <span id="modifyDate"></span></a>
                     <button class="btn waves-effect waves-center" type="submit" name="action"
                             style="width: 100pt; height: 48pt;  right: 10px; font-size: 20pt; border: 0px solid #7a157a;
                             -moz-box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
                            -webkit-box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
                            box-shadow: 0px 1px 3px rgba(255,255,255,0.5), inset 0px 0px 2px rgba(238,98,115,1);
-                          font-weight: bold; background-color: #ee6e73;"
+                          font-weight: bold; background-color:#C8E2F1;"
                             onClick="location.href='/'";>BACK
                     </button>
+                    <img class="WCT-logo" src="/resources/cse_logo.png" height="70" align="right" alt/>
                 </div>
+
             </div>
         </nav>
 
@@ -58,7 +60,7 @@
 
         <div class="fixed-action-btn" style="position: relative; top: 70px; left: 350px;">
             <button class="btn waves-effect waves-center" type="button" onclick="location.href='/memo'"; name="memo"
-                    style="background-color: #4CAF50; border: none; height: 150px; width: 150px; border-radius: 12px;
+                    style="background-color: #C8E2F1; border: none; height: 150px; width: 150px; border-radius: 12px;
             color: white; padding: 10px 15px; text-align: center; text-decoration: none; display: inline-block; font-size: 25px;">
                 <img class="notepad-icon" src="/resources/notepad.png" alt>MEMO
             </button>
@@ -66,7 +68,7 @@
 
         <div class="fixed-action-btn" style="position: relative; bottom: 95px; left: 505px">
             <button class="btn waves-effect waves-center" type="button" onClick="location.href='/translate/register'" name="translation"
-                    style="background-color: #4CAF50; border: none; height: 150px; width: 150px; border-radius: 12px;
+                    style="background-color: #C8E2F1; border: none; height: 150px; width: 150px; border-radius: 12px;
             color: white; padding: 5px 15px; text-align: center; text-decoration: none; display: inline-block; font-size: 23px;">
                 <img class="translation-icon" src="/resources/translation.png" width="100" height="100" alt>번역
             </button>
@@ -86,28 +88,27 @@
     </div>
 </div>
 
-<footer class="page-footer">
+<footer class="page-footer" STYLE="background-color:#C8E2F1;">
     <div class="container">
         <div class="row">
             <div class="col l6 s12">
-                <h5 class="white-text">Web Service Coputing Term Project</h5>
-                <img class="cse-logo" src="${pageContext.request.contextPath}/resources/cse_logo.png">
+                <img class="cse-logo" src="${pageContext.request.contextPath}/resources/Team_Text.png">
 
             </div>
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Team Member</h5>
                 <ul>
-                    <li  class="grey-text text-lighten-3">컴퓨터 공학부 2014136068 손지원</li>
-                    <li  class="grey-text text-lighten-3">컴퓨터 공학부 2011136124 진규환</li>
-                    <li  class="grey-text text-lighten-3">컴퓨터 공학부 2013136134 최준혁</li>
+                    <li  class="black-text text-lighten-3">컴퓨터 공학부 2014136068 손지원</li>
+                    <li  class="black-text text-lighten-3">컴퓨터 공학부 2011136124 진규환</li>
+                    <li  class="black-text text-lighten-3">컴퓨터 공학부 2013136134 최준혁</li>
                 </ul>
             </div>
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">CONTACT</h5>
                 <ul>
-                    <li><a class="grey-text text-lighten-3" href="https://github.com/MaliciousJ/WebServiceComputingGitHub">GitHub</a></li>
-                    <li><a class="grey-text text-lighten-3" href="https://www.koreatech.ac.kr/kor.do">KOREATECH</a></li>
-                    <li><a class="grey-text text-lighten-3" href="https://cse.koreatech.ac.kr/">컴퓨터 공학부</a></li>
+                    <li><a class="black-text text-lighten-3" href="https://github.com/MaliciousJ/WebServiceComputingGitHub">GitHub</a></li>
+                    <li><a class="black-text text-lighten-3" href="https://www.koreatech.ac.kr/kor.do">KOREATECH</a></li>
+                    <li><a class="black-text text-lighten-3" href="https://cse.koreatech.ac.kr/">컴퓨터 공학부</a></li>
                 </ul>
             </div>
         </div>
