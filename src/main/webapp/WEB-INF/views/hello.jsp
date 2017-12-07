@@ -106,7 +106,7 @@
             <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">CONTACT</h5>
                 <ul>
-                    <li><a class="white-text text-lighten-3" href="https://github.com/MaliciousJ/WebServiceComputingGitHub">GitHub</a></li>
+                    <li><a class="white-text text-lighten-3" href="https://github.com/MaliciousJ/WebServiceComputing">GitHub</a></li>
                     <li><a class="white-text text-lighten-3" href="https://www.koreatech.ac.kr/kor.do">KOREATECH</a></li>
                     <li><a class="white-text text-lighten-3" href="https://cse.koreatech.ac.kr/">컴퓨터 공학부</a></li>
                 </ul>
