@@ -36,8 +36,8 @@ public interface TranslateMapper {
     @Delete("DELETE FROM TRANSLATE WHERE ID = #{id}")
     void delete(@Param("id") int id);
 
-    @Select("SELECT * FROM TRANSLATE WHERE ORIGINAL = #{original} AND TRANSLATED = #{translated}")
-    Translate searchByOrigTrans(Translate translate);
+    @Select("SELECT * FROM TRANSLATE WHERE replace(ORIGINAL, ' ', '') = #{original} AND replace(TRANSLATED, ' ', '') = #{translated}")
+    Translate searchByOrigTrans(@Param("original") String original, @Param("translated") String translate);
 
     @Update("UPDATE TRANSLATE SET FAVORITE = #{favorite} WHERE ID = #{id}")
     void updateCount(Translate translate);
