@@ -32,7 +32,17 @@ public class TranslateController {
     private TranslateService translateService;
 
     @RequestMapping("/register")
-    public String register(Model model) {
+    public String register(Model model, @RequestParam(required=false) String source, @RequestParam(required=false) String target, @RequestParam(required=false) String order) {
+        Searchable searchable = new Searchable();
+        searchable.setSource(source);
+        searchable.setTarget(target);
+        searchable.setFavorite(1);
+        searchable.setOrderParam("favorite");
+
+        List<Translate> translates = translateMapper.findByScript(searchable);
+        System.out.println("translates = " + translates);
+        model.addAttribute("translates", translates);
+
         Translate translate = new Translate();
         model.addAttribute("Translate", translate);
 
