@@ -27,7 +27,7 @@
     <ul class="collection"  style="padding:0; margin:0;"></ul>
   </div>
 
-  <div class="col s9" style="padding:0; margin:0; max-height:540px;">
+  <div class="col s6" style="padding:0; margin:0; max-height:540px;">
     <!-- Teal page content  -->
     <nav>
       <div class="nav-wrapper"STYLE="background-color:#191970;">
@@ -72,9 +72,22 @@
         <a class="btn-floating btn-large waves-effect waves-light blue" style="height: 37px; width: 37px; padding: 3px; border-radius: 3px" onclick="start();" >
           <img class="translation-icon" src="/resources/mic.png" width="32" height="32"></a>
       </div>
-
-
     </form:form>
+  </div>
+
+  <div class="col s3" style="padding:0; margin:0; overflow-y:auto; overflow-x:hidden; -ms-overflow-style: none;">
+    <c:forEach var="u" items="${translates}">
+      <!-- Grey navigation panel -->
+      <ul class="db_collection"  style="padding:0; margin:0;">
+        <li id='"+key+"' class="collection-item avatar" onclick="fn_get_data_one(this.id);" >
+          <i class="material-icons circle red">a</i>
+          <span class="title"></span><p class='txt'>#날짜 : ${u.date}</p>
+          <span class="title"></span><p class='txt'>#원문 : ${u.original}</p>
+          <span class="title"></span><p class='txt'>#번역결과 : ${u.translated}</p>
+          <span class="title"></span><p class='txt'>#번역 횟수 : ${u.favorite}</p>
+        </li>
+      </ul>
+    </c:forEach>
   </div>
 
   <div class="preloader-wrapper big active" style="position:absolute; z-index:1000; left:50%; top:50%; display:none;">
