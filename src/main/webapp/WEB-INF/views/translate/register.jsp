@@ -33,7 +33,7 @@
 <div class="row">
   <div class="col s3" style="padding:0; margin:0; overflow-y:auto; overflow-x:hidden; height:540px; -ms-overflow-style: none;">
     <!-- Grey navigation panel -->
-    <ul class="collection" id="fb_collection"  style="padding:0; margin:0;" >메모</ul>
+    <ul class="collection" id="fb_collection"  style="padding:0; margin:0;" ></ul>
   </div>
 
   <div class="col s6" style="padding:0; margin:0; max-height:540px;">
