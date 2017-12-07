@@ -134,7 +134,9 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
-<audio id="audio" src="/resources/1.mp3"></audio>
+<audio id="audio" src="${pageContext.request.contextPath}/resources/1.mp3"></audio>
+<audio id="audio2" src="${pageContext.request.contextPath}/resources/2.mp3"></audio>
+<audio id="audio3" src="${pageContext.request.contextPath}/resources/3.mp3"></audio>
 <script>
     var auth, database, userInfo, selectedKey;
     // Initialize Firebase
@@ -247,7 +249,6 @@
         $('.textarea').val('');
         selectedKey=null;
     }
-
 
 </script>
 

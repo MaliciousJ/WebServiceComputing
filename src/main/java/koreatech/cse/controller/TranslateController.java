@@ -62,6 +62,7 @@ public class TranslateController {
         trans.setDate(new java.util.Date());
         trans.setTranslated(translate_Naver(source, target, trans.getOriginal(), "NMT"));
 
+
         translateService.register(trans);
         return "redirect:/translate/register";
     }

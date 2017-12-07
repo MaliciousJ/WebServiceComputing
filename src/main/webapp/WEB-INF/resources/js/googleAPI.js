@@ -3,12 +3,13 @@ var recognition = new webkitSpeechRecognition();
 var isRecognizing = false;
 var ignoreOnend = false;
 var finalTranscript = '';
-var musicCnt = 0;
-var maxMusic = 3;
-var announce = false;
+musicCnt = 0;
+maxMusic = 3;
+announce = false;
+submitted = false;
 recognition.continuous = true;
 recognition.interimResults = true;
-
+a = 0;
 recognition.onstart = function() {
     console.log('onstart', arguments);
     isRecognizing = true;
@@ -73,20 +74,34 @@ recognition.onresult = function(event) {
 };
 function moveMusic(txt) {
     var audio = document.getElementById('audio');
+    var audio2 = document.getElementById('audio2');
+    var audio3 = document.getElementById('audio3');
+
     if(txt == 'next')
         musicCnt = (musicCnt + 1) % maxMusic;
-    else{
+    else if(txt == 'prev'){
         musicCnt = (musicCnt - 1 + maxMusic) % maxMusic;
     }
-
-    if(musicCnt == 0)
-        audio.setAttribute('src', '/resources/1.mp3');
-    else if(musicCnt == 1)
-        audio.setAttribute('src', '/resources/2.mp3');
-    else if(musicCnt == 2){
-            audio.setAttribute('src', '/resources/3.mp3');
+    console.log('musicCount : ' + musicCnt);
+    if(musicCnt == 0){
+        audio2.pause();
+        audio3.pause();
+        audio.currentTime = 0;
+        audio.play();
     }
-    audio.play();
+
+    else if(musicCnt == 1){
+        audio.pause();
+        audio3.pause();
+        audio2.currentTime = 0;
+        audio2.play();
+    }
+    else if(musicCnt == 2){
+        audio.pause();
+        audio2.pause();
+        audio3.currentTime = 0;
+        audio3.play();
+    }
 }
 
 function fireCommand(string) {
@@ -98,8 +113,12 @@ function fireCommand(string) {
         } else
             announce = false;
     } else if (string.endsWith('저장') || string.endsWith('저 장')) {
-        alertStr('Submit Done!');
-        location.href = "/";
+        if(submitted == false) {
+            alertStr('제출 완료');
+            submitted = true;
+        } else
+            submitted = false;
+
     } else if (string.endsWith('노래 켜') || string.endsWith('음악 켜')) {
         var audio = document.getElementById('audio');
         audio.play();
@@ -112,7 +131,7 @@ function fireCommand(string) {
     } else if (string.endsWith('볼륨 다운') || string.endsWith('볼륨다운')) {
         var audio = document.getElementById('audio');
         audio.volume -= 0.3;
-    } else if (string.endsWith('다음')|| string.endsWith('다 음')) {
+    } else if (string.endsWith('다음')|| string.endsWith('다 음')|| string.endsWith('다 음 다 음')|| string.endsWith('다음 다음')) {
         moveMusic('next');
     }  else if (string.endsWith('이전')|| string.endsWith('이 전')) {
         moveMusic('prev');
@@ -205,4 +224,11 @@ function removeScript( id ) {
 function alertStr(msg) {
     alert(msg);
     save_data( $(".textarea").val() );
+}
+
+function resetTXT() {
+    $('.textarea').innerHTML = '';
+    $('#final_span').innerHTML = '';
+    $('#interim_span').innerHTML = '';
+    $('#for_translate').innerHTML = '';
 }
