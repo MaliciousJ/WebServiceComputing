@@ -26,7 +26,7 @@
 </head>
 <body>
 <div class="row">
-  <div class="col s3" style="padding:0; margin:0; overflow-y:auto; overflow-x:hidden; height:1080px; -ms-overflow-style: none;">
+  <div class="col s3" style="padding:0; margin:0; overflow-y:auto; overflow-x:hidden; width:100%; height:1080px; -ms-overflow-style: none;">
 
     <div class="nav-wrapper">
       <div class="col s12"><!--TODO 어째선지 버튼 오른쪽의 배경이 적용되지 않고 있음. 해결 필요-->

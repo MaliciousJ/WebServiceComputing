@@ -1,17 +1,26 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<!DOCTYPE HTML>
 <html>
 <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-    <link href="/resources/css/main.css" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="${pageContext.request.contextPath}/resources/css/main.css" rel="stylesheet" type="text/css" />
+    <script src="${pageContext.request.contextPath}/resources/js/googleAPI.js"></script>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
         ::-webkit-scrollbar {
             display:none;
         }
-        .collection { cursor: pointer;}
+        .collection, .db_collection { cursor: pointer;}
+        table, tr, td {
+            border: 1px solid black;
+            text-align:center;
+        }
     </style>
 </head>
 <body>
@@ -21,7 +30,7 @@
         <ul class="collection"  style="padding:0; margin:0;"></ul>
     </div>
 
-    <div class="col s9" style="padding:0; margin:0; max-height:540px;">
+    <div class="col s6" style="padding:0; margin:0; max-height:540px;">
         <!-- Teal page content  -->
         <nav>
             <div class="nav-wrapper"STYLE="background-color:#C8E2F1;">
@@ -49,12 +58,26 @@
             </button>
         </div>
         <div class="fixed-action-btn" style="position: relative; bottom: 51px; left: 210px">
-            <span style="display:none;" class="final" id="final_span"></span>
+            <span class="final" id="final_span"></span>
             <span class="interim" id="interim_span"></span>
-            <form:input  path="original" id="for_translate" class="final" value="" />
             <a class="btn-floating btn-large waves-effect waves-light blue" style="height: 37px; width: 37px; padding: 3px; border-radius: 3px" onclick="start();" >
                 <img class="translation-icon" src="/resources/mic.png" width="32" height="32"></a>
         </div>
+    </div>
+
+    <div>
+        <c:forEach var="u" items="${translate}">
+        <!-- Grey navigation panel -->
+        <ul class="db_collection"  style="padding:0; margin:0;">
+            <li id='"+key+"' class="collection-item avatar" onclick="fn_get_data_one(this.id);" >
+                <i class="material-icons circle red">a</i>
+                <span class="title"></span><p class='txt'>#날짜 : ${u.date}</p>
+                <span class="title"></span><p class='txt'>#원문 : ${u.original}</p>
+                <span class="title"></span><p class='txt'>#번역결과 : ${u.translated}</p>
+                <span class="title"></span><p class='txt'>#번역 횟수 : ${u.favorite}</p>
+            </li>
+        </ul>
+        </c:forEach>
     </div>
 
 
