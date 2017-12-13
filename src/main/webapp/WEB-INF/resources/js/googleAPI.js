@@ -84,7 +84,7 @@ function moveMusic(txt) {
     }
     console.log('musicCount : ' + musicCnt);
     if(musicCnt == 0){
-        audio2.pause();
+        audio2.pause();d
         audio3.pause();
         audio.currentTime = 0;
         audio.play();
